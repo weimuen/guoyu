@@ -250,6 +250,20 @@
                             <li><a href="/admins/cates">分类列表</a></li>
                         </ul>
                     </li>
+                    <li class="active">
+                        <a href="#"><i class="icon-t-shirt"></i>商品管理</a>
+                        <ul>
+                            <li><a href="/admins/goods/create">商品添加</a></li>
+                            <li><a href="/admins/goods">商品列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="icon-th"></i>订单管理</a>
+                        <ul>
+                            <li><a href="/admins/orders/create">订单添加</a></li>
+                            <li><a href="/admins/orders">订单列表</a></li>
+                        </ul>
+                    </li>
 
 
 

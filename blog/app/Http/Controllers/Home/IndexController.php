@@ -31,14 +31,14 @@ class IndexController extends Controller
 
         */
         //一级分类
-       /* $cates_data = Cates::where('pid',0)->get();
+        $cates_data = Cates::where('pid',0)->get();
         
         foreach($cates_data as $key => $value){
             $value['sub'] = Cates::where('pid',$value->id)->get();
             foreach($value['sub'] as $key2 => $value2){
                 $value2['sub'] = Cates::where('pid',$value2->id)->get();
             }
-        }*/
+        }
 
         // dump($pid_data);
         // 加载视图

@@ -5,16 +5,18 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AuthsController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
+
     {
-        return view('admin.auths.index');
+       
+        return view('admin.orders.index');
     }
 
     /**
@@ -24,7 +26,7 @@ class AuthsController extends Controller
      */
     public function create()
     {
-        return view('admin.auths.create');
+        return view('admin.orders.create');
     }
 
     /**
@@ -35,7 +37,7 @@ class AuthsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**

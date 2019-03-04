@@ -77,8 +77,7 @@ class UsersController extends Controller
             DB::rollBack();
              return back()->with('error','添加失败');
         }
-        dump($res1);
-        dump($res2);
+        
 
 
         
