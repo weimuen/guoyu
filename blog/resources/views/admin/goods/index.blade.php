@@ -1,12 +1,13 @@
 @extends('admin.layout.index')
 
 @section('content')
-	<div class="mws-panel grid_8">
+
+<div class="mws-panel grid_8">
     	<div class="mws-panel-header">
-        	<span><i class="icon-table"></i>用户列表</span>
+        	<span><i class="icon-table"></i>商品列表</span>
         </div>
         <div class="mws-panel-body no-padding">
-        	<form action="/admins/users" method="get">
+        	<form action="/admins/goods" method="get">
             <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
   <div id="DataTables_Table_1_length" class="dataTables_length">
     <label>显示
@@ -31,13 +32,17 @@
     <thead>
       <tr role="row">
 	      <th>ID</th>
-	      <th>用户名</th>
-	      <th>邮箱</th>
-	      <th>手机号</th>
-	      <th>用户签名</th>
+	      <th>商品名称</th>
+	      <th>商品价格</th>
+	      <th>商品图片</th>
+	      <th>商品库存</th>
 	      <th>创建时间</th>
 	      <th>修改时间</th>
-      	  <th>操作</th>
+	      <th>商品描述</th>
+	      <th>状态</th>
+	      <th>操作</th>
+	     
+      	 
 		  
        </tr>
     </thead>
@@ -46,26 +51,55 @@
 				@foreach($data as $k=>$v)
 				<tr class="odd">
 				    <td>{{$v->id}}</td>
-				    <td>{{$v->uname}}</td>
-				    <td>{{$v->email}}</td>
-				    <td>{{$v->tel}}</td>
+				    <td>{{$v->gname}}</td>
+
+				    <td>{{$v->price}}</td>
 				    <td>
-				    	<abbr title="{{$v->usersinfo->description}}">
+                          <img src="{{$v->gpic}}" alt="">
+
+				    </td>
+
+				    <td>{{$v->stock}}</td>
+				    <td>{{$v->created_at}}</td>
+				    <td>{{$v->updated_at}}</td>
+				    
+
+				    <td>
+				    	<abbr title="{{$v->pdesc}}">
 				    	<p style="width:200px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">
-				    	{{$v->usersinfo->description}}
+				    	{{$v->gdesc}}
 				   	 </p>
 				    </abbr>
 				    </td>
-				    <td>{{$v->created_at}}</td>
-				    <td>{{$v->updated_at}}</td>
+				    <td>               
+                                   @if($v->status == 1)上架
+
+                                   @endif($v->status == 2)下架
+
+                    </td>
+				  
+						           
+				 
+				   
 				  
 				    <td>
-						<a href="/admins/users/{{$v->id}}/edit" class="btn btn-info">修改</a>
-						<form action="/admins/users/{{$v->id}}" method="post" style="display: inline-block;">
+						<a href="/admins/goods/{{$v->id}}" class="btn btn-info">修改</a>
+						<form action="/admins/goods/{{$v->id}}" method="post" style="display: inline-block;">
 							{{csrf_field()}}
 							{{method_field('DELETE')}}
 							<input type="submit" value="删除" class="btn btn-danger" >
 						</form>
+						
+				                   
+                                   <a href="/admins/goods/{{$v->id}}" class="btn btn-info">上架</a>
+                                   @if($v->status ==1)
+                               
+						           <a href="/admins/goods/{{$v->id}}" class="btn btn-danger">下架</a>
+				        
+                                   @endif($v->status == 2)
+						
+						
+
 				    </td>
 				</tr>
 			 	@endforeach
@@ -80,4 +114,5 @@
 		</div>
         </div>
     </div>
-@endsection('content')
+
+@endsection

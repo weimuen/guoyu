@@ -17,11 +17,14 @@ class AuthsController extends Controller
      */
     public function index()
     {
+
         //获取数据
         $data_auths = Auths::all();
         // dump($data_auths);
         // 加载视图
         return view('admin.auths.index',['data_auths'=>$data_auths]);
+
+       
     }
 
     /**
@@ -31,8 +34,6 @@ class AuthsController extends Controller
      */
     public function create()
     {
-
-        //
         return view('admin.auths.create');
     }
 
@@ -44,6 +45,7 @@ class AuthsController extends Controller
      */
     public function store(AuthsStoreRequest $request)
     {
+
         //事务处理 开启事务
         DB::beginTransaction();
 
@@ -77,6 +79,7 @@ class AuthsController extends Controller
             DB::rollBack();
             return back()->with('error','添加失败');
         }
+
 
     }
 
