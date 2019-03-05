@@ -14,35 +14,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        /*
-            家用电器
-                电视
-                    液晶电视
-                    曲面电视
-                洗衣机
-                    滚筒洗衣机
-            服装
-                男装
-                    衬衫
-                    西装
-                女装
-                    裙子
-                    婚纱
-
-        */
-        //一级分类
-       /* $cates_data = Cates::where('pid',0)->get();
-        
-        foreach($cates_data as $key => $value){
-            $value['sub'] = Cates::where('pid',$value->id)->get();
-            foreach($value['sub'] as $key2 => $value2){
-                $value2['sub'] = Cates::where('pid',$value2->id)->get();
-            }
-        }*/
-
-        // dump($pid_data);
         // 加载视图
         return view('home.index.index');
+        
     }
 
     /**

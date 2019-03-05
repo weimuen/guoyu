@@ -4,18 +4,24 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\AuthsStoreRequest;
+use App\Models\Auths;
+use App\Models\Works;
+use DB;
 class AuthsController extends Controller
 {
-    /**
+    /**AuthsStoreRequest;
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
-        return view('admin.auths.index');
+        //获取数据
+        $data_auths = Auths::all();
+        // dump($data_auths);
+        // 加载视图
+        return view('admin.auths.index',['data_auths'=>$data_auths]);
     }
 
     /**
@@ -36,24 +42,41 @@ class AuthsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AuthsStoreRequest $request)
     {
-        // 验证表单数据
-     /*    $this->validate($request, [
-        'aname' => 'required',
-        'content' => 'required',
-        'apic' => 'required|file',
+        //事务处理 开启事务
+        DB::beginTransaction();
 
-    ],[
-        'aname.required'=>'姓名必填',
-        'aname.regex'=>'姓名格式不正确',
-        'content.required'=>'介绍必填', 
-        'upic.required'=>'头像必填',
-        'upic.file'=>'头像格式不正确', 
+        //接收数据
+       $data = $request->except(['_token']);
+        $auths = new Auths;
+        $auths->aname = $data['aname'];
+        $auths->content = $data['content'];
+        $auths->sex = $data['sex'];
+        $auths->apic = $data['apic'];
+        $res1 = $auths->save();
+        
+        //接收返回的id号
+        $id = $auths->id; 
+        // dump($id);
 
-    ]);*/
+        $works = new Works;
+        $works->wid = $id;
+        $works->wname = $data['wname'];
+        $works->price = $data['price'];
+        $works->wpic = $data['wpic'];
+        $res2 = $works->save();
 
-        dump($request->all());
+        //判断res1和res2是否全部成功
+        if($res1 && $res2){
+            //提交事务
+            DB::commit();
+            return redirect('admin/auths')->with('success','添加成功');
+        }else{
+            //回滚事务
+            DB::rollBack();
+            return back()->with('error','添加失败');
+        }
 
     }
 

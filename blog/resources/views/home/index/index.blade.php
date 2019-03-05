@@ -13,7 +13,7 @@
                     <li>
                         <div class="fj">
                             <span class="n_img"><span></span><img href="/home/images/nav1.png" /></span>
-                            <span class="fl">{{ $v->cname }}</span>
+                            <span class="fl">电视</span>
                         </div>
                         
                         <div class="zj">

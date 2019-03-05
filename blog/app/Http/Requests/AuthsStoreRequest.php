@@ -28,6 +28,9 @@ class AuthsStoreRequest extends FormRequest
         'aname' => 'required',
         'content' => 'required',
         'apic' => 'required|file',
+        'wname' => 'required',
+        'price' => 'required',
+        'wpic' => 'required|file',
          ];
     }
 
@@ -35,10 +38,14 @@ class AuthsStoreRequest extends FormRequest
     {
         return [
           'aname.required'=>'姓名必填',
-        'aname.regex'=>'姓名格式不正确',
         'content.required'=>'介绍必填', 
         'upic.required'=>'头像必填',
-        'upic.file'=>'头像格式不正确', 
+        'upic.file'=>'作品格式不正确',
+        'wname.required'=>'作品名称必填',
+        'wpic.required'=>'作品图片必填',
+        'wpic.file'=>'作品格式不正确',
+        'price.required'=>'作品价格必填',
+         
         ];
     }
 }

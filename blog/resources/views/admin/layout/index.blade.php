@@ -315,6 +315,25 @@
                             <li><a href="/admins/auths">作者列表</a></li>
                         </ul>
                     </li>
+                     <li class="active">
+                        <a href="#"><i class="icon-list-2"></i>评论管理</a>
+                        <ul>
+                            <li><a href="/admins/comments">作者列表</a></li>
+                        </ul>
+                    </li>
+                     <li class="active">
+                        <a href="#"><i class="icon-picture"></i>轮播管理</a>
+                        <ul>
+                            <li><a href="">添加轮播图</a></li>
+                            <li><a href="">轮播图列表</a></li>
+                        </ul>
+                    </li>
+                     <li class="active">
+                        <a href="#"><i class="icon-cog"></i>网站配置</a>
+                        <ul>
+                            <li><a href="">配置项</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

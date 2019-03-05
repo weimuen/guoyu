@@ -25,28 +25,47 @@
         					<input type="text" class="small" name="aname" value="{{ old('aname')}}">
         				</div>
         			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">作者介绍</label>
-        				<div class="mws-form-item">
-        					<textarea name="content"cols="90" rows="10">{{ old('content') }}</textarea>
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">头像</label>
-        				<div class="mws-form-item">
-        					<input type="file" class="small" name="apic">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">性别</label>
-        				<div class="mws-form-item clearfix">
-        					<ul class="mws-form-list inline">
-        						<li><input type="radio" name="sex" value="w" checked> <label>女</label></li>
-        						<li><input type="radio" name="sex" value="m"> <label>男</label></li>
-        						
-        					</ul>
-        				</div>
-        			</div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">作品名称</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="wname" value="{{ old('wname')}}">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">作品价格</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="price" value="{{ old('price')}}">
+                        </div>
+                    </div>
+                   
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">作者介绍</label>
+                        <div class="mws-form-item">
+                            <textarea name="content"cols="90" rows="5">{{ old('content') }}</textarea>
+                        </div>
+                    </div>
+                     <div class="mws-form-row">
+                        <label class="mws-form-label">性别</label>
+                        <div class="mws-form-item clearfix">
+                            <ul class="mws-form-list inline">
+                                <li><input type="radio" name="sex" value="w" checked> <label>女</label></li>
+                                <li><input type="radio" name="sex" value="m"> <label>男</label></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">头像</label>
+                        <div class="mws-form-item">
+                            <input type="file" class="small" name="apic">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">作品图片</label>
+                        <div class="mws-form-item">
+                            <input type="file" class="small" name="wpic" value="{{ old('wpic')}}">
+                        </div>
+                    </div>
         		</div>
         		<div class="mws-button-row">
         			<input type="submit" value="添加" class="btn btn-danger">
