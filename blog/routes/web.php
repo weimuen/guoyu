@@ -26,8 +26,6 @@ Route::resource('admins/users','Admin\UsersController');
 Route::get('admins/cates/create/{id}','Admin\CatesController@create');
 // 后台 分类管理
 Route::resource('admins/cates','Admin\CatesController');
-// 后台 作者专区
-Route::resource('admins/auths','Admin\AuthsController');
 //后台 评论管理
 Route::resource('admins/comments','Admin\CommentsController');
 //后台 网站管理
@@ -153,10 +151,16 @@ Route::resource('admins/slids','Admin\SlidsController');
 
 
 
+
 //后台 商品管理
 Route::resource('admins/goods','Admin\GoodsController');
 //上架
-Route::get('admins/goods/up/{id}','Admin\GoodsController@up');
-Route::get('admins/goods/down/{id}','Admin\GoodsController@down');
+Route::get('admins/goods/{id}/up','Admin\GoodsController@up');
+Route::get('admins/goods/{id}/down','Admin\GoodsController@down');
+Route::get('admins/orders/{id}/xiangqing','Admin\OrdersController@xiangqing');
+Route::get('admins/orders/{id}/fahuo','Admin\OrdersController@fahuo');
 //订单管理
 Route::resource('admins/orders','Admin\OrdersController');
+//友情链接
+Route::resource('admins/links','Admin\LinksController');
+

@@ -1,10 +1,9 @@
 @extends('admin.layout.index')
 
 @section('content')
-
 <div class="mws-panel grid_8">
     	<div class="mws-panel-header">
-        	<span>订单添加</span>
+        	<span>订单修改</span>
         </div>
         <div class="mws-panel-body no-padding">
         	<!-- 显示错误信息 -->
@@ -17,8 +16,9 @@
 			        </ul>
 			    </div>
 			@endif
-        	<form class="mws-form" action="/admins/orders" method="post">
+        	<form class="mws-form" action="/admins/orders/{{$orders->id}}/edit" method="post">
         		{{ csrf_field() }}
+                {{ method_field('PUT')}}
         		<div class="mws-form-inline">
         			<div class="mws-form-row">
         				<label class="mws-form-label">下单人</label>
@@ -54,17 +54,19 @@
                     				<label class="mws-form-label">收货状态</label>
                     				<div class="mws-form-item clearfix">
                     					<ul class="mws-form-list inline">
-                    						<li><input type="radio"> <label>请发货</label></li>
-                    						<li><input type="radio"> <label>发货</label></li>
+                    						<li><input type="radio"> <label>下单成功</label></li>
+                                            
+                    						<li><input type="radio"> <label>确认收货</label></li>
+                                            
                     						<li><input type="radio"> <label>收货完成</label></li>
-                    					
+                    					   
                     					</ul>
                     				</div>
                     </div>
         			<div class="mws-form-row">
         				<label class="mws-form-label">电话</label>
         				<div class="mws-form-item">
-        					<input type="text" class="small" name="status" ">
+        					<input type="text" class="small" name="tel" >
         				</div>
         			</div>
         			<div class="mws-form-row">
@@ -78,11 +80,10 @@
         			
         		</div>
         		<div class="mws-button-row">
-        			<input type="submit" value="添加" class="btn btn-success">
+        			<input type="submit" value="修改" class="btn btn-success">
         			<input type="reset" value="重置" class="btn btn-info">
         		</div>
         	</form>
         </div>    	
     </div>
-
 @endsection

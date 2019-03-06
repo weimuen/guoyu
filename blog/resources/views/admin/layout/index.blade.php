@@ -260,11 +260,18 @@
                     <li class="active">
                         <a href="#"><i class="icon-th"></i>订单管理</a>
                         <ul>
-                            <li><a href="/admins/orders/create">订单添加</a></li>
+                    
                             <li><a href="/admins/orders">订单列表</a></li>
                         </ul>
                     </li>
-
+                    <li class="active">
+                        <a href="#"><i class="icon-windows"></i>友情链接管理</a>
+                        <ul>
+                            <li><a href="/admins/links/create">友情链接添加</a></li>
+                            <li><a href="/admins/links">友情链接列表</a></li>
+                        </ul>
+                    </li>
+                     
 
 
 
@@ -322,7 +329,7 @@
 
 
                     
-                   
+
                      <li class="active">
                         <a href="#"><i class="icon-list-2"></i>评论管理</a>
                         <ul>
