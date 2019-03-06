@@ -8,7 +8,7 @@
         <div class="mws-panel-body no-padding">
         	<!-- 显示错误信息 -->
         	
-        	<form class="mws-form" action="/admins/goods" method="post">
+        	<form class="mws-form" action="/admins/goods" method="post"  enctype="multipart/form-data">
         		{{ csrf_field() }}
         		<div class="mws-form-inline">
         			<div class="mws-form-row">
@@ -39,16 +39,16 @@
         				<label class="mws-form-label">添加图片</label>
         				<div class="mws-form-item">
         					<input type="file" class="small" name="gpic">
-                            <img src="/public/{{$goods->gpic}}" alt="">
+                            
         				</div>
         			</div>
         			<div class="mws-form-row">
                     				<label class="mws-form-label">状态</label>
-                    				<div class="mws-form-item clearfix">
+                    				<div class="mws-form-item clearfix" name="status">
                     					<ul class="mws-form-list inline">
-                    						<li><input type="radio"> <label>新品</label></li>
-                    						<li><input type="radio"> <label>上架</label></li>
-                    						<li><input type="radio"> <label>下架</label></li>
+                    						<li><input type="radio" checked value="1"> <label>新品</label></li>
+                    						<li><input type="radio" value="2"> <label>上架</label></li>
+                    						<li><input type="radio" value="2"> <label>下架</label></li>
                     					
                     					</ul>
                     				</div>

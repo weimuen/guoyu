@@ -9,8 +9,9 @@
         <div class="mws-panel-body no-padding">
         	<!-- 显示错误信息 -->
         	
-        	<form class="mws-form" action="/admins/goods/{{$goods->id}}" method="post">
+        	<form class="mws-form" action="/admins/goods/{{$goods->id}}" method="post" enctype="multipart/form-data">
         		{{ csrf_field() }}
+                {{ method_field('PUT')}}
         		<div class="mws-form-inline">
         			<div class="mws-form-row">
         				<label class="mws-form-label">商品名称</label>
@@ -40,15 +41,20 @@
         				<label class="mws-form-label">添加图片</label>
         				<div class="mws-form-item">
         					<input type="file" class="small" name="gpic">
-                            <img src="/public/{{$goods->gpic}}" alt="">                            
+                            <img src="uploads/{{$v->gpic}}" alt=""> 
+                       
+                                                      
         				</div>
         			</div>
         			<div class="mws-form-row">
                     				<label class="mws-form-label">状态</label>
-                    				<div class="mws-form-item clearfix">
+                    				<div class="mws-form-item clearfix" name="status">
                     					<ul class="mws-form-list inline">
+                                            @if($goods->status==1)
                     						<li><input type="radio"> <label>新品</label></li>
-                    						<li><input type="radio"> <label>上架></label></li>
+                                            @elseif($goods->status==2)
+                    						<li><input type="radio"> <label>上架</label></li>
+                                            @endif($goods->status==3)
                     						<li><input type="radio"> <label>下架</label></li>
                     					
                     					</ul>
@@ -65,7 +71,7 @@
         			
         		</div>
         		<div class="mws-button-row">
-        			<input type="submit" value="添加" class="btn btn-success">
+        			<input type="submit" value="修改" class="btn btn-success">
         			<input type="reset" value="重置" class="btn btn-info">
         		</div>
         	</form>
