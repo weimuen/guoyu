@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Cates;
-class IndexController extends Controller
+
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        // 加载视图
-        return view('home.index.index');
-        
+        //引入模板
+        return view('admin.comments.index');
     }
 
     /**

@@ -39,7 +39,7 @@
         				<label class="mws-form-label">添加图片</label>
         				<div class="mws-form-item">
         					<input type="file" class="small" name="gpic">
-                            <img src="/public/{{$goods->gpic}}" alt="">
+                            <img src="" alt="">
         				</div>
         			</div>
         			<div class="mws-form-row">

@@ -322,30 +322,24 @@
 
 
                     
-                    <li class="active">
-                        <a href="#"><i class="icon-user"></i>作者专区</a>
-                        <ul>
-                            <li><a href="/admins/auths/create">作者添加</a></li>
-                            <li><a href="/admins/auths">作者列表</a></li>
-                        </ul>
-                    </li>
+                   
                      <li class="active">
                         <a href="#"><i class="icon-list-2"></i>评论管理</a>
                         <ul>
-                            <li><a href="/admins/comments">作者列表</a></li>
+                            <li><a href="/admins/comments">评论列表</a></li>
                         </ul>
                     </li>
                      <li class="active">
                         <a href="#"><i class="icon-picture"></i>轮播管理</a>
                         <ul>
-                            <li><a href="">添加轮播图</a></li>
-                            <li><a href="">轮播图列表</a></li>
+                            <li><a href="/admins/slids/create">添加轮播图</a></li>
+                            <li><a href="/admins/slids">轮播图列表</a></li>
                         </ul>
                     </li>
                      <li class="active">
-                        <a href="#"><i class="icon-cog"></i>网站配置</a>
+                        <a href="#"><i class="icon-cog"></i>系统设置</a>
                         <ul>
-                            <li><a href="">配置项</a></li>
+                            <li><a href="/admins/webset/index">站点管理</a></li>
                         </ul>
                     </li>
                 </ul>

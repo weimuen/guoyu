@@ -28,6 +28,12 @@ Route::get('admins/cates/create/{id}','Admin\CatesController@create');
 Route::resource('admins/cates','Admin\CatesController');
 // 后台 作者专区
 Route::resource('admins/auths','Admin\AuthsController');
+//后台 评论管理
+Route::resource('admins/comments','Admin\CommentsController');
+//后台 网站管理
+Route::get('admins/webset/index','Admin\WebsetController@index');
+//后台 轮播图管理
+Route::resource('admins/slids','Admin\SlidsController');
 
 
 
