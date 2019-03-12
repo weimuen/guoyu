@@ -16,45 +16,45 @@
         			<div class="mws-form-row">
         				<label class="mws-form-label">商品名称</label>
         				<div class="mws-form-item">
-        					<input type="text" class="small" name="gname">
+        					<input type="text" class="small" name="gname" value="{{$goods->gname}}">
         				</div>
         			</div>
         			<div class="mws-form-row">
-        				<label class="mws-form-label">商品类别</label>
+        				<label class="mws-form-label">所属分类</label>
         				<div class="mws-form-item">
-        					<input type="text" class="small" name="tid">
+        					<input type="text" class="small" name="tid" value="{{$goods->tid}}">
         				</div>
         			</div>
+                   
         			<div class="mws-form-row">
         				<label class="mws-form-label">商品价格</label>
         				<div class="mws-form-item">
-        					<input type="text" class="small" name="price">
+        					<input type="text" class="small" name="price" value="{{$goods->price}}">
         				</div>
         			</div>
         			<div class="mws-form-row">
         				<label class="mws-form-label">库存</label>
         				<div class="mws-form-item">
-        					<input type="text" class="small" name="stock" >
+        					<input type="text" class="small" name="stock" value="{{$goods->stock}}">
         				</div>
         			</div>
         			<div class="mws-form-row">
         				<label class="mws-form-label">添加图片</label>
         				<div class="mws-form-item">
-        					<input type="file" class="small" name="gpic">
-                            <img src="uploads/{{$v->gpic}}" alt=""> 
-                       
-                                                      
+        					<input type="file" class="small" name="gpic" value="{{$goods->gpic}}">
+                            <img src="/upload/public/{{$goods->gpic}}" alt="" width="100px">
+                                                   
         				</div>
         			</div>
         			<div class="mws-form-row">
                     				<label class="mws-form-label">状态</label>
                     				<div class="mws-form-item clearfix" name="status">
                     					<ul class="mws-form-list inline">
-                                            @if($goods->status==1)
-                    						<li><input type="radio"> <label>新品</label></li>
-                                            @elseif($goods->status==2)
+                                          
+                    						<li><input type="radio" checked> <label>新品</label></li>
+                                           
                     						<li><input type="radio"> <label>上架</label></li>
-                                            @endif($goods->status==3)
+                                           
                     						<li><input type="radio"> <label>下架</label></li>
                     					
                     					</ul>
@@ -63,7 +63,7 @@
         			<div class="mws-form-row">
         				<label class="mws-form-label">商品描述</label>
         				<div class="mws-form-item">
-        					<textarea name="gdesc" class="small">
+        					<textarea name="gdesc" class="small" value="{{$goods->gdesc}}">
         						
         					</textarea>
         				</div>

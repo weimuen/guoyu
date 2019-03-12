@@ -156,11 +156,14 @@ Route::resource('admins/slids','Admin\SlidsController');
 Route::resource('admins/goods','Admin\GoodsController');
 //上架
 Route::get('admins/goods/{id}/up','Admin\GoodsController@up');
+//下架
 Route::get('admins/goods/{id}/down','Admin\GoodsController@down');
+//订单详情
 Route::get('admins/orders/{id}/xiangqing','Admin\OrdersController@xiangqing');
 Route::get('admins/orders/{id}/fahuo','Admin\OrdersController@fahuo');
 //订单管理
 Route::resource('admins/orders','Admin\OrdersController');
 //友情链接
 Route::resource('admins/links','Admin\LinksController');
+
 

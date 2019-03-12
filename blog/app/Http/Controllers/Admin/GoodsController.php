@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Goods;
 use DB;
+use App\Models\Cates;
 
 class GoodsController extends Controller
 {
@@ -16,11 +17,18 @@ class GoodsController extends Controller
      */
     public function index(Request $request)
     {
+         // 操作数据库
+     
         $count = $request->input('count',5);
         $search = $request->input('search','');
         $data = Goods::where('gname','like','%'.$search.'%')->paginate($count);
 
-        return  view('admin.goods.index',['data'=>$data,'request'=>$request->all()]);
+        //加载视图
+        return view('admin.goods.index',['data'=>$data,'request'=>$request->all()]);
+
+
+
+       
     }
 
     /**
@@ -30,8 +38,12 @@ class GoodsController extends Controller
      */
     public function create()
     {
-        return view('admin.goods.create');
-    }
+       
+      // $cates = DB::table('cates')->select('*',DB::raw("concat(path,',',id) as paths"))->get();
+     
+       $cates = Cates::all();
+        return view('admin.goods.create',['cates' => $cates]);
+     }
 
     /**
      * Store a newly created resource in storage.
@@ -40,42 +52,44 @@ class GoodsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        //接收数据
-       
-         $data = $request->except(['_token']);
-          //处理文件上传
-        $file = $request->file('gpic');
-             
-        $ext = $file->extension();
-        $file_name = time()+rand(1000,9999).'.'.$ext;
-        $res2 = $file->storeAs('public',$file_name); 
-        
+    { 
+
+      //开始事务
+      DB::beginTransaction();
+      //执行文件上传
+      $img = $request->file('gpic');
+      //获取后缀名
+      $ext=$request->file('gpic')->extension();
+      //新的文件名
+      $newfile=time(1000,9999).rand().'.'.$ext;
+      $res1 = $img->storeAs('public',$newfile);
+      //接收数据
+       $data = $request->except(['_token']);
+     
         $goods = new Goods;
         $goods->gname = $data['gname'];
-        $goods->tid = $data['tid'];
-        $goods->price= $data['price'];
-        $goods->stock= $data['stock'];
-        
-        
-      
-        $goods->gdesc= $data['gdesc'];
-       
-       $res1 = $goods->save();
 
+        // $goods->tid = $data['tid'];
+        $goods->price = $data['price'];
+        $goods->stock = $data['stock'];
+        $goods->gpic = $newfile;
+        $goods->gdesc = $data['gdesc'];
+        $res2= $goods->save();
 
-       
-        if ($res1 && $res2) {
+         if($res1 && $res2){
+            DB::commit();
             return redirect('admins/goods')->with('success','添加成功');
         }else{
-            return back()->with('error','添加失败');
+            DB::rollBack();
+             return back()->with('error','添加失败');
         }
         
-          
-        
-        
-    }
 
+        
+        
+          
+
+    }
     /**
      * Display the specified resource.
      *
@@ -84,7 +98,7 @@ class GoodsController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -113,31 +127,25 @@ class GoodsController extends Controller
     {
         
         
-        $goods = Goods::find($id);
-       
-        $goods->gname= $request->input('gname','');
-        $goods->tid = $request->input('tid','');
-        $goods->price = $request->input('price','');
-        $goods->stock = $request->input('stock','');
-        $goods->gdesc = $request->input('gdesc','');
-        $res1 = $goods->save();
+        //接收数据       
+        $gname= $request->input('gname');
+        $tid = $request->input('tid');
+        $price = $request->input('price');
+        $stock = $request->input('stock');
+        $gdesc = $request->input('gdesc');
         
+        $gpic = $request->input('gpic');
+        
+         
 
-     if($request->hasfile('gpic'))
-     {
-         $ext = $file->extension();
-         $file_name = time()+rand(1000,9999).'.'.$ext;
-        $res2 = $file->storeAs('public',$file_name);
-     }else{
-        return back('admin/goods');
-     }
+       $sql = "update goods set gname = '$gname' ,tid = '$tid' ,price = '$price' ,stock ='$stock' ,gdesc ='$gdesc',gpic = '$gpic' where id=$id";
 
-      if ($res1 && $res2) {
-            return redirect('admins/goods')->with('success','修改成功');
+        
+        if(DB::update($sql)){
+              return redirect('admins/goods')->with('success','修改成功');
         }else{
-            return back()->with('error','修改失败');
+            return back();
         }
-
 
         
 
@@ -162,17 +170,11 @@ class GoodsController extends Controller
 
     }
 
-    //上架
-    public function up($id, $status = 2)
+    public function  up($id)
     {
-        $data['status'] = 2;
-        Goods::update($data,['gid'=>$id],true);
-        return  redirect('admins/goods/index');
-    }
-    //下架
-    public function  down($id)
-    {
-        return $this->up($id,3);
+
     }
 }
+   
+
  
