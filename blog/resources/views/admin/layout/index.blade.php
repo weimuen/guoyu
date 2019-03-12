@@ -349,6 +349,13 @@
                             <li><a href="/admins/webset/index">站点管理</a></li>
                         </ul>
                     </li>
+                     <li class="active">
+                        <a href="#"><i class="icon-list-2"></i>管理员管理</a>
+                        <ul>
+                            <li><a href="/admins/admins/create">添加管理员</a></li>
+                            <li><a href="/admins/admins">管理员列表</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -412,4 +419,5 @@
     <script  src="/admin/js/demo/demo.formelements.js"></script>
 
 </body>
+
 </html>
