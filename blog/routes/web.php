@@ -189,7 +189,10 @@ Route::get('homes/goods/{id}','Home\GoodsController@index');
 
 //上架
 Route::get('admins/goods/{id}/up','Admin\GoodsController@up');
+//下架
 Route::get('admins/goods/{id}/down','Admin\GoodsController@down');
+//订单详情
 Route::get('admins/orders/{id}/xiangqing','Admin\OrdersController@xiangqing');
 Route::get('admins/orders/{id}/fahuo','Admin\OrdersController@fahuo');
+
 

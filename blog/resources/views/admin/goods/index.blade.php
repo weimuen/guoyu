@@ -33,6 +33,7 @@
       <tr role="row">
 	      <th>ID</th>
 	      <th>商品名称</th>
+	      <th>所属分类</th>
 	      <th>商品价格</th>
 	      <th>商品图片</th>
 	      <th>商品库存</th>
@@ -50,10 +51,10 @@
 				<tr class="odd">
 				    <td>{{$v->id}}</td>
 				    <td>{{$v->gname}}</td>
-
+				    <td>{{$v->tid}}</td>
 				    <td>{{$v->price}}</td>
 				    <td>
-                          <img src="uploads/{{$v->gpic}}" alt="">
+                        <img src="/upload/public/{{$v->gpic}}" alt="" width="100px"> 
 				    </td>
 				    <td>{{$v->stock}}</td>
 				    <td>{{$v->created_at}}</td>
@@ -66,8 +67,8 @@
 				    </abbr>
 				    </td>
 				    <td>               
-                                   @if($v->status == 1)新品
-                                   @elseif($v->status == 2)上架
+                                   
+                                   @if($v->status == 2)上架
                                    @endif($v->ststus == 3) 下架
 
                     </td>			  
@@ -79,11 +80,12 @@
 							<input type="submit" value="删除" class="btn btn-danger" >
 						</form>
 						
-				                  @if($v->status ==2)
+				                  
                                    <a href="/admins/goods/{{$v->id}}/up" class="btn btn-info">上架</a>
-                                  
-                                  @endif($v->status ==3)
-						           <a href="/admins/goods/{{$v->id}}/down" class="btn btn-danger">下架</a>			
+                                   @if($v->status ==2)
+                               
+						           <a href="/admins/goods/{{$v->id}}/down" class="btn btn-danger">下架</a>
+						              @endif($v->status ==3)			
 
 				    </td>
 				</tr>

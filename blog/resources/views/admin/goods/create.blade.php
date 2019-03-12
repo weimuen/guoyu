@@ -1,6 +1,7 @@
 @extends('admin.layout.index')
 
 @section('content')
+
 <div class="mws-panel grid_8">
     	<div class="mws-panel-header">
         	<span>商品添加</span>
@@ -10,6 +11,7 @@
         	
         	<form class="mws-form" action="/admins/goods" method="post"  enctype="multipart/form-data">
         		{{ csrf_field() }}
+               
         		<div class="mws-form-inline">
         			<div class="mws-form-row">
         				<label class="mws-form-label">商品名称</label>
@@ -17,12 +19,21 @@
         					<input type="text" class="small" name="gname">
         				</div>
         			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">商品类别</label>
-        				<div class="mws-form-item">
-        					<input type="text" class="small" name="tid">
-        				</div>
-        			</div>
+                   
+                    <div class="mws-form-row">
+                                    <label class="mws-form-label">所属分类</label>
+                                    <div class="mws-form-item" >
+                                        <select class="large" name="tid">
+                                       
+                                        @foreach($cates as $k=>$v)
+                                            <option value="{{$v->gid}}">{{$v->cname}}</option>
+                                        @endforeach                                   
+                                           
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+        			
         			<div class="mws-form-row">
         				<label class="mws-form-label">商品价格</label>
         				<div class="mws-form-item">
@@ -36,11 +47,13 @@
         				</div>
         			</div>
         			<div class="mws-form-row">
-        				<label class="mws-form-label">添加图片</label>
-        				<div class="mws-form-item">
-        					<input type="file" class="small" name="gpic">
-        				</div>
-        			</div>
+                        <label class="mws-form-label">添加图片</label>
+                        <div class="mws-form-item">
+                            <input type="file" class="small" name="gpic"  >
+                             
+                                                      
+                        </div>
+                    </div>
         			<div class="mws-form-row">
                     				<label class="mws-form-label">状态</label>
                     				<div class="mws-form-item clearfix" name="status">
@@ -69,4 +82,9 @@
         	</form>
         </div>    	
     </div>
+    <script>
+   
+           
+        
+</script>
 @endsection
