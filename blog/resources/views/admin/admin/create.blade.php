@@ -3,7 +3,7 @@
 @section('content')
 	<div class="mws-panel grid_8">
     	<div class="mws-panel-header">
-        	<span>用户添加</span>
+        	<span>添加管理员</span>
         </div>
         <div class="mws-panel-body no-padding">
         	<!-- 显示错误信息 -->
@@ -16,7 +16,7 @@
 			        </ul>
 			    </div>
 			@endif
-        	<form class="mws-form" action="/admins/users" method="post">
+        	<form class="mws-form" action="/admins/admins" method="post">
         		{{ csrf_field() }}
         		<div class="mws-form-inline">
         			<div class="mws-form-row">

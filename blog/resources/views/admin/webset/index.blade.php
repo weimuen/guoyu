@@ -6,61 +6,50 @@
         	<span>站点管理</span>
         </div>
         <div class="mws-panel-body no-padding">
-        	<form class="mws-form" action="form_layouts.html">
-        		<div class="mws-form-inline">
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">网站标题</label>
-        				<div class="mws-form-item">
-        					<input type="text" class="small">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">关键词</label>
-        				<div class="mws-form-item">
-        					<input type="text" class="small">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">网站描述</label>
-        				<div class="mws-form-item">
-        					<input type="text" class="small">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">网站版权</label>
-        				<div class="mws-form-item">
-        					<input type="text" class="small">
-        				</div>
-        			</div>
-        			
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">网站状态</label>
-        				<div class="mws-form-item clearfix">
-        					<ul class="mws-form-list inline">
-        						<li><input type="radio" checked> <label>开</label></li>
-        						<li><input type="radio"> <label>关</label></li>
-        						
-        					</ul>
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">网站logo</label>
-        				<div class="mws-form-item">
-        					<input type="file" class="small">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">预览</label>
-        				<div class="mws-form-item">
-        					<img src="/home/images/his_5.jpg" alt="">
-        				</div>
-        			</div>
-        		</div>
-        		<div class="mws-button-row">
-        			<input type="submit" value="添加" class="btn btn-danger">
-        			<input type="reset" value="重置" class="btn btn-info">
-        		</div>
-        	</form>
+        	<form class="mws-form" action="" method="post">
+                {{ method_field('PUT')}}
+                {{ csrf_field() }}
+                <div class="mws-form-inline">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">标题</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="title" value="{{config('web.title')}}">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">keywords</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="keywords" value="{{config('web.keywords')}}">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">介绍</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="description" value="{{config('web.description')}}">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">Logo</label>
+                        <div class="mws-form-item">
+                            <input type="file" class="small" name="logo" value="">
+                            <img src="/Uploads/webset/{{config('web.logo')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">统计</label>
+                        <div class="mws-form-item">
+                            <textarea name="baidu" class="small">
+                          {{config('web.baidu')}}  
+                            </textarea>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="mws-button-row">
+                    <input type="submit" value="修改" class="btn btn-warning">
+                    <input type="reset" value="重置" class="btn btn-info">
+                </div>
+            </form>
         </div>    	
     </div>
 @endsection('content')
