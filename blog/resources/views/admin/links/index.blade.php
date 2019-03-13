@@ -47,10 +47,7 @@
 				<tr class="odd">
 				    <td>{{$v->id}}</td>
 				    <td>{{$v->lname}}</td>
-				    <td>{{$v->lurl}}</td>
-
-				    
-				   
+				    <td>{{$v->lurl}}</td>			   
 				    <td>{{$v->created_at}}</td>
 				    <td>{{$v->updated_at}}</td>
 				    <td>{{$v->deteled_at}}</td>
