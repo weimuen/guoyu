@@ -57,6 +57,7 @@ class SlidsController extends Controller
         $slids = new Slids;
         $slids->sname = $data['sname'];
         $slids->surl = $data['surl'];
+        $slids->order = $data['order'];
         $slids->simg = $file_name;
         // 保存数据
         $res = $slids->save();
@@ -67,9 +68,7 @@ class SlidsController extends Controller
             return back()->with('error','添加失败');
         }
 
-        
-   
-        
+ 
     }
 
     /**
@@ -107,9 +106,22 @@ class SlidsController extends Controller
     {
         //修改数据
         $slid = Slids::find($id);
+         // 创建文件上传对象
+        $file = $request->file('simg');
+        // 判断文件是否存在
+         if($request->hasFile('simg')){
+            // 获取文件后缀
+            $ext = $file->extension();
+            // 拼接名称
+            $file_name = time()+rand(1000,9999).'.'.$ext;
+            $res = $file->storeAs('public',$file_name);
+        }else{
+            return back();
+        }
         $slid->sname = $request->input('sname');
         $slid->surl = $request->input('surl');
         $slid->simg = $request->input('simg');
+        $slid->order = $request->input('order');
         //保存数据
         $slid->save();
         //判断是否成功

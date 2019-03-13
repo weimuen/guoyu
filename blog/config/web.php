@@ -5,5 +5,5 @@
 		"description"=>'3',
 		"logo"=>'4',
 		"baidu"=>'5',
-	)
+	);
 ?>

@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::get('admins/login','Admin\LoginController@index');
 // 验证码
 Route::get('admins/yzm','Admin\LoginController@yzm');
+// 后台登录的处理操作
+Route::post('admins/dologin','Admin\LoginController@dologin');
 
 
 
@@ -50,18 +52,21 @@ Route::group(['namespace'=>'Admin','prefix'=>'admins'],function()
 	Route::resource('orders','OrdersController');
 	// 友情链接
 	Route::resource('links','LinksController');
-
 	
 });
 
 // 前台首页路由
 Route::get('homes','Home\IndexController@index');
-
+// 前台登录
+Route::get('homes/login','Home\LoginController@index');
+// 前台注册
+Route::get('homes/reg','Home\RegController@index');
 // 分类页面
 Route::get('homes/cates/{id}','Home\CatesController@index');
 
 // 商品详情页
 Route::get('homes/goods/{id}','Home\GoodsController@index');
+// 
 
 
 

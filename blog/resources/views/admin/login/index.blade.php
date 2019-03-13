@@ -30,6 +30,16 @@
             <center><h1>后台登录</h1><center>
             <div class="mws-login-lock"><i class="icon-lock"></i></div>
             <div id="mws-login-form">
+                <!-- 显示错误信息 -->
+            @if (count($errors) > 0)
+                <div class="mws-form-message error">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
                 <form class="mws-form" action="/admins/dologin" method="post">
                     {{ csrf_field() }}
                     <div class="mws-form-row">
@@ -44,7 +54,7 @@
                     </div>
                     <div class="mws-form-row">
                         <div class="mws-form-item">
-                            <input type="password" name="upwd" style="width:60%" class="mws-login-password required" placeholder="请输入验证码">
+                            <input type="password" name="code" style="width:60%" class="mws-login-password required" placeholder="请输入验证码">
                             <img src="/admins/yzm" onclick="this.src='/admins/yzm?m'+Math.random()" alt="">
                         </div>
                     </div>

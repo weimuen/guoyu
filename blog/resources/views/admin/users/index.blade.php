@@ -32,8 +32,10 @@
       <tr role="row">
 	      <th>ID</th>
 	      <th>用户名</th>
+	      <th>性别</th>
 	      <th>邮箱</th>
 	      <th>手机号</th>
+	      <th>权限</th>
 	      <th>用户签名</th>
 	      <th>创建时间</th>
 	      <th>修改时间</th>
@@ -47,8 +49,11 @@
 				<tr class="odd">
 				    <td>{{$v->id}}</td>
 				    <td>{{$v->uname}}</td>
+				    <td>{{$v->sex}}</td>
+
 				    <td>{{$v->email}}</td>
 				    <td>{{$v->tel}}</td>
+				    <td>{{$v->auth}}</td>
 				    <td>
 				    	<abbr title="{{$v->usersinfo->description}}">
 				    	<p style="width:200px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">

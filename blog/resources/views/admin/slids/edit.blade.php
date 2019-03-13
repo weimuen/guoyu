@@ -26,6 +26,12 @@
 	    				</div>
 	    			</div>
 	    			<div class="mws-form-row">
+	    				<label class="mws-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">排序</font></font></label>
+	    				<div class="mws-form-item">
+	    					<input type="text" class="small" name="order" value="{{ $slids->order }}">
+	    				</div>
+	    			</div>
+	    			<div class="mws-form-row">
 	    				<label class="mws-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">链接地址</font></font></label>
 	    				<div class="mws-form-item">
 	    					<input type="text" class="small" name="surl" value="{{ $slids->surl }}">
@@ -34,14 +40,14 @@
 	    			<div class="mws-form-row">
 	    				<label class="mws-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">轮播图片</font></font></label>
 	    				<div class="mws-form-item">
-	    					<input type="file" class="small" name="simg" value="{{ $slids->img }}">
+	    					<input type="file" class="small" name="simg" value="{{ $slids->simg }}">
 	    				</div>
 	    			</div>
 	    			
 	    			
 	    		</div>
 	    		<div class="mws-button-row">
-	    			<font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" value="添加" class="btn btn-danger"></font></font>
+	    			<font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" value="修改" class="btn btn-danger"></font></font>
 	    			<input type="reset" value="重置" class="btn btn-info">
 	    		</div>
 	    	</form>

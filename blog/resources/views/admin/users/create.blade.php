@@ -46,11 +46,19 @@
         			<div class="mws-form-row">
         				<label class="mws-form-label">权限</label>
         				<div class="mws-form-item">
-        					<input type="radio" name="auth" value="0">管理员
+        					<input type="radio" name="auth" value="管理员">管理员
                             
-                            <input type="radio" name="auth" value="1">普通用户
+                            <input type="radio" name="auth" value="普通会员">普通用户
         				</div>
         			</div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">性别</label>
+                        <div class="mws-form-item">
+                            <input type="radio" name="sex" value="男">男
+                            
+                            <input type="radio" name="sex" value="女">女
+                        </div>
+                    </div>
         			<div class="mws-form-row">
         				<label class="mws-form-label">邮箱</label>
         				<div class="mws-form-item">
