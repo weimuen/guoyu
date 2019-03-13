@@ -39,9 +39,9 @@ class GoodsController extends Controller
     public function create()
     {
        
-      // $cates = DB::table('cates')->select('*',DB::raw("concat(path,',',id) as paths"))->get();
-     
+     //获取类别数据
        $cates = Cates::all();
+       //加载视图
         return view('admin.goods.create',['cates' => $cates]);
      }
 
@@ -109,7 +109,7 @@ class GoodsController extends Controller
      */
     public function edit($id)
     {
-
+       //加载视图
        $goods = Goods::find($id);
        return view('admin.goods.edit',['goods'=>$goods]); 
        
@@ -137,16 +137,39 @@ class GoodsController extends Controller
         $gpic = $request->input('gpic');
         
          
+       
+      if($request->hasFile('gpic')){  //  检查是否为有效文件
 
-       $sql = "update goods set gname = '$gname' ,tid = '$tid' ,price = '$price' ,stock ='$stock' ,gdesc ='$gdesc',gpic = '$gpic' where id=$id";
+             $img = $request->file('gpic');
+             //获取后缀名
+            $ext=$request->file('gpic')->extension();
+             //新的文件名
+             $newfile=time(1000,9999).rand().'.'.$ext;
+              $res1 = $img->storeAs('public',$newfile);
 
-        
-        if(DB::update($sql)){
-              return redirect('admins/goods')->with('success','修改成功');
+                
+
+
+            }else{
+                return redirect()->back()->withInput()->withErrors('文件上传失败');
+            }
+
+             $goods = Goods::find($id);  
+               $goods->gname = $request->input('gname','');
+               $goods->tid = $request->input('tid','');
+               $goods->price = $request->input('price','');
+               $goods->stock = $request->input('stock','');
+              $goods->gdesc = $request->input('gdesc','');
+              $goods->gpic = $newfile;
+              
+            
+        if($goods->save()){
+            return redirect('admins/goods')->with('success','修改成功');
         }else{
-            return back();
+            return back()->with('error','修改失败！');;
         }
-
+             
+        
         
 
 
@@ -160,6 +183,7 @@ class GoodsController extends Controller
      */
     public function destroy($id)
     {
+        //删除操作
         $goods = Goods::destroy($id);
 
         if($goods){

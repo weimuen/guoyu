@@ -107,7 +107,7 @@ class OrdersController extends Controller
 
         return  view('admin.Orders.xiangqing',['data'=>$data,'request'=>$request->all()]);
 
-             $orders = Orders::find($gid);
+             $orders = Orders::find($id);
 
              return view('admin.orders.xiangqing',['orders'=>$orders]);
         }
