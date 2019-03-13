@@ -54,14 +54,17 @@ class UsersController extends Controller
          DB::beginTransaction();
         //接收数据
         $data = $request->except(['_token','reupwd']);
-        // dump($data);
+         //dd($data);
         $users = new Users;
         $users->uname = $data['uname'];
         $users->upwd = Hash::make($data['upwd']);
         $users->email = $data['email'];
         $users->auth = $data['auth'];
         $users->tel = $data['tel'];
+        $users->sex = $data['sex'];
+    
         $res1 = $users->save(); 
+
         //接收返回的id
         $id = $users->id;
 

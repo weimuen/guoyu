@@ -19,15 +19,21 @@
 	    		{{ csrf_field() }}
 	    		<div class="mws-form-inline">
 	    			<div class="mws-form-row">
-	    				<label class="mws-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">轮播图名称</font></font></label>
+	    				<label class="mws-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标题</font></font></label>
 	    				<div class="mws-form-item">
-	    					<input type="text" class="small" name="sname" value="{{old('sname')}}">
+	    					<input type="text" class="small" name="sname" value="{{old('sname')}}" placeholder="请输入标题">
 	    				</div>
 	    			</div>
 	    			<div class="mws-form-row">
 	    				<label class="mws-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">链接地址</font></font></label>
 	    				<div class="mws-form-item">
-	    					<input type="text" class="small" name="surl" value="{{old('surl')}}">
+	    					<input type="text" class="small" name="surl" value="{{old('surl')}}" placeholder="友情链接"> 
+	    				</div>
+	    			</div>
+	    			<div class="mws-form-row">
+	    				<label class="mws-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">排序</font></font></label>
+	    				<div class="mws-form-item">
+	    					<input type="number" class="small" name="order" placeholder="数值越大越靠前">
 	    				</div>
 	    			</div>
 	    			<div class="mws-form-row">
@@ -36,8 +42,6 @@
 	    					<input type="file" class="small" name="simg">
 	    				</div>
 	    			</div>
-	    			
-	    			
 	    		</div>
 	    		<div class="mws-button-row">
 	    			<font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" value="添加" class="btn btn-danger"></font></font>

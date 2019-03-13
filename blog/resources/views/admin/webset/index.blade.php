@@ -6,7 +6,7 @@
         	<span>站点管理</span>
         </div>
         <div class="mws-panel-body no-padding">
-        	<form class="mws-form" action="" method="post">
+        	<form class="mws-form" action="/admins/webset/config" method="post">
                 {{ method_field('PUT')}}
                 {{ csrf_field() }}
                 <div class="mws-form-inline">
@@ -32,7 +32,7 @@
                         <label class="mws-form-label">Logo</label>
                         <div class="mws-form-item">
                             <input type="file" class="small" name="logo" value="">
-                            <img src="/Uploads/webset/{{config('web.logo')}}" alt="">
+                            <img src="/Upload/webset/{{config('web.logo')}}" alt="">
                         </div>
                     </div>
                     <div class="mws-form-row">
