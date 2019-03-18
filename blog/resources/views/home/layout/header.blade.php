@@ -5,7 +5,7 @@
     	<span class="s_city_b">
         	<span class="fl">送货至：</span>
             <span class="s_city">
-            	<span>四川</span>
+            	<span>北京</span>
                 <div class="s_city_bg">
                 	<div class="s_city_t"></div>
                     <div class="s_city_c">
@@ -78,7 +78,16 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="/homes/login">登录</a>&nbsp; <a href="/homes/reg" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/homes/person">个人中心</a>&nbsp;|</span>
+
+        	<span class="fl">你好，
+
+               @if(session('homeUser'))
+                <a href="">{{session('homeUser.uname')}}</a>&nbsp;<a href="/homes/logout">退出</a> 
+               @else
+               <a href="/homes/login">请登录</a>&nbsp; 
+               @endif
+                <a href="/homes/reg" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/homes/person">个人中心</a>&nbsp;|</span>
+
         	<span class="ss">
             	
                 
@@ -102,7 +111,7 @@
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
+    <div class="logo"><a href="/homes"><img src="/home/images/timg.jpg" /></a></div>
     <div class="search">
     	<form>
         	<input type="text" value="" class="s_ipt" />

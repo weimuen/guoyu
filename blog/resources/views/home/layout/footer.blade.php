@@ -1,5 +1,11 @@
  <!--Begin Footer Begin -->
     <div class="b_btm_bg bg_color">
+         <div class="b_nav">
+        <dl>                                         
+            <dt><a href="#">新手上路</a></dt>
+        </dl>
+            
+        </div>
         <div class="b_btm">
             <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr>

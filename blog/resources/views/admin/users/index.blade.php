@@ -36,7 +36,7 @@
 	      <th>邮箱</th>
 	      <th>手机号</th>
 	      <th>权限</th>
-	      <th>用户签名</th>
+	      
 	      <th>创建时间</th>
 	      <th>修改时间</th>
       	  <th>操作</th>
@@ -50,17 +50,10 @@
 				    <td>{{$v->id}}</td>
 				    <td>{{$v->uname}}</td>
 				    <td>{{$v->sex}}</td>
-
 				    <td>{{$v->email}}</td>
 				    <td>{{$v->tel}}</td>
 				    <td>{{$v->auth}}</td>
-				    <td>
-				    	<abbr title="{{$v->usersinfo->description}}">
-				    	<p style="width:200px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">
-				    	{{$v->usersinfo->description}}
-				   	 </p>
-				    </abbr>
-				    </td>
+				    
 				    <td>{{$v->created_at}}</td>
 				    <td>{{$v->updated_at}}</td>
 				  

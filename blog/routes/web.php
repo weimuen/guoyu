@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 // 后台登录
 Route::get('admins/login','Admin\LoginController@index');
+Route::get('admins/logout','Admin\LoginController@logout');
 // 验证码
 Route::get('admins/yzm','Admin\LoginController@yzm');
 // 后台登录的处理操作
@@ -25,7 +26,7 @@ Route::post('admins/dologin','Admin\LoginController@dologin');
 
 
 // 后台路由组
- //Route::group(['namespace'=>'Admin','prefix'=>'admins','middleware'=>'Login'],function()
+ // Route::group(['namespace'=>'Admin','prefix'=>'admins','middleware'=>'Login'],function()
 Route::group(['namespace'=>'Admin','prefix'=>'admins'],function()
 
 	{	
@@ -43,7 +44,9 @@ Route::group(['namespace'=>'Admin','prefix'=>'admins'],function()
 	// 后台 评论管理
 	Route::resource('comments','CommentsController');
 	// 后台 网站管理
-	Route::get('webset/index','WebsetController@index');
+	Route::resource('webset','WebsetController');
+	
+
 	// 后台 轮播图管理
 	Route::resource('slids','SlidsController');
 	// 后台 商品管理
@@ -61,8 +64,14 @@ Route::group(['namespace'=>'Admin','prefix'=>'admins'],function()
 Route::get('homes','Home\IndexController@index');
 // 前台登录
 Route::get('homes/login','Home\LoginController@index');
+Route::post('homes/dologin','Home\LoginController@dologin');
+// 前台退出
+Route::get('homes/logout','Home\LoginController@logout');
 // 前台注册
 Route::get('homes/reg','Home\RegController@index');
+Route::get('homes/reg/changestatus/{id}/{token}','Home\RegController@changestatus');
+// 处理前台注册
+Route::post('regCheck','Home\RegController@check');
 // 分类页面
 Route::get('homes/cates/{id}','Home\CatesController@index');
 

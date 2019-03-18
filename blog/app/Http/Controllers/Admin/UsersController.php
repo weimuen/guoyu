@@ -152,7 +152,7 @@ class UsersController extends Controller
         //删除数据
         $res1 = Users::destroy($id);
         $res2 = Usersinfo::where('uid',$id)->delete();
-        if($res1 && $res2){
+        if($res1){
             DB::commit();
             return redirect($_SERVER['HTTP_REFERER'])->with('success','删除成功');
         }else{

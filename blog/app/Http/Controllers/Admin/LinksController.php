@@ -42,15 +42,17 @@ class LinksController extends Controller
     public function store(Request $request)
     {
         //接收数据
-        $data = $request->except(['_token','reupwd']);
-        $links = new links;
-        $links ->lname = $data['lname'];
-        $links ->lurl = $data['lurl'];
-        if($links->save()){
-               return redirect('admin/links')->with('success','添加成功');
+        $data = $request->except(['_token']);
+        $link = new links;
+        $link->lname = $data['lname'];
+        $link->lurl = $data['lurl'];
+        if($link->save()){
+               return redirect('/admins/links')->with('success','添加成功');
         }else{
                return back()->with('error','添加失败');
         }
+
+        
 
     }
 

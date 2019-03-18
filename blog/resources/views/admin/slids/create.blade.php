@@ -1,6 +1,7 @@
 @extends('admin.layout.index')
 
 @section('content')
+
 	<div class="mws-panel grid_8">
 		<div class="mws-panel-header">
 	    	<span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">添加轮播图</font></font></span>

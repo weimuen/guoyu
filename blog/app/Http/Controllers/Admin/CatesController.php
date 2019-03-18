@@ -11,6 +11,7 @@ class CatesController extends Controller
 
     public static function getCates()
     {
+
          //$cates_data = Cates::all();
         // $cates_data = DB::select(" select *,concat(path,',',id) as paths from cates order by paths");
         //
@@ -28,10 +29,14 @@ class CatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+         $count = $request->input('count',5);
+        $search = $request->input('search','');
+        $data = Cates::where('cname','like','%'.$search.'%')->paginate($count);
+        
         //显示模板
-        return view('admin.cates.index',['cates_data'=>self::getCates()]);
+        return view('admin.cates.index',['data'=>$data,'cates_data'=>self::getCates()]);
         
     }
 

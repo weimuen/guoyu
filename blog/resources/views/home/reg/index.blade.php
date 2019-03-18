@@ -31,7 +31,7 @@
 	<script type="text/javascript" src="/home/js/lrscroll_1.js"></script>
     
     
-<title>尤洪</title>
+<title>国羽</title>
 </head>
 <body>  
 <!--Begin Header Begin-->
@@ -49,12 +49,26 @@
 <!--Begin Login Begin-->
 <div class="log_bg">	
     <div class="top">
-        <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
+        <!-- <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div> -->
     </div>
 	<div class="regist">
     	<div class="log_img"><img src="/home/images/l_img.png" width="611" height="425" /></div>
 		<div class="reg_c">
-        	<form>
+      <div>
+          @if (session('success'))
+                <div class="mws-form-message success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="mws-form-massage error">
+                    {{ session('error') }}
+                </div>
+            @endif
+      </div>
+
+        	<form action="/regCheck" method="post">
+            {{csrf_field()}}
             <table border="0" style="width:420px; font-size:14px; margin-top:20px;" cellspacing="0" cellpadding="0">
               <tr height="50" valign="top">
               	<td width="95">&nbsp;</td>
@@ -65,47 +79,33 @@
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;用户名 &nbsp;</td>
-                <td><input type="text" value="" class="l_user" /></td>
+                <td><input type="text" value="{{old('uname')}}" class="l_user" name="uname"/></td>
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;密码 &nbsp;</td>
-                <td><input type="password" value="" class="l_pwd" /></td>
+                <td><input type="password" value="" class="l_pwd" name="upwd"/></td>
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;确认密码 &nbsp;</td>
-                <td><input type="password" value="" class="l_pwd" /></td>
+                <td><input type="password" value="" class="l_pwd" name="reupwd"/></td>
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;邮箱 &nbsp;</td>
-                <td><input type="text" value="" class="l_email" /></td>
+                <td><input type="text" value="{{old('email')}}" class="l_email" name="email"/></td>
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;手机 &nbsp;</td>
-                <td><input type="text" value="" class="l_tel" /></td>
+                <td><input type="text" value="{{old('tel')}}" class="l_tel" name="tel"/></td>
               </tr>
-              <tr height="50">
-                <td align="right">邀请人会员名 &nbsp;</td>
-                <td><input type="text" value="" class="l_mem" /></td>
-              </tr>
-              <tr height="50">
-                <td align="right">邀请人ID号 &nbsp;</td>
-                <td><input type="text" value="" class="l_num" /></td>
-              </tr>
-              <tr height="50">
-                <td align="right"> <font color="#ff4e00">*</font>&nbsp;验证码 &nbsp;</td>
+               <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;性别 &nbsp;</td>
                 <td>
-                    <input type="text" value="" class="l_ipt" />
-                    <a href="#" style="font-size:12px; font-family:'宋体';">换一张</a>
+                   <input type="radio" value="男" class="" name="sex"/>男
+                   <input type="radio" value="女" class="" name="sex"/>女
+
                 </td>
               </tr>
-              <tr>
-              	<td>&nbsp;</td>
-                <td style="font-size:12px; padding-top:20px;">
-                	<span style="font-family:'宋体';" class="fl">
-                    	<label class="r_rad"><input type="checkbox" /></label><label class="r_txt">我已阅读并接受《用户协议》</label>
-                    </span>
-                </td>
-              </tr>
+            
               <tr height="60">
               	<td>&nbsp;</td>
                 <td><input type="submit" value="立即注册" class="log_btn" /></td>
