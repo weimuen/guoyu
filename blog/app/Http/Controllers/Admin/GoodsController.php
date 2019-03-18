@@ -39,10 +39,15 @@ class GoodsController extends Controller
     public function create()
     {
        
-     //获取类别数据
-       $cates = Cates::all();
-       //加载视图
-        return view('admin.goods.create',['cates' => $cates]);
+    
+       $cates = DB::table('cates')->select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+       
+       
+       
+            
+        
+            //加载视图
+            return view('admin.goods.create',['cates'=>$cates]);
      }
 
     /**
@@ -69,7 +74,7 @@ class GoodsController extends Controller
         $goods = new Goods;
         $goods->gname = $data['gname'];
 
-        // $goods->tid = $data['tid'];
+         $goods->tid = $data['tid'];
         $goods->price = $data['price'];
         $goods->stock = $data['stock'];
         $goods->gpic = $newfile;
@@ -109,9 +114,14 @@ class GoodsController extends Controller
      */
     public function edit($id)
     {
-       //加载视图
+       
+       //获取类别数据
+        $cates = DB::table('cates')->select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+        
        $goods = Goods::find($id);
-       return view('admin.goods.edit',['goods'=>$goods]); 
+
+      //加载视图
+       return view('admin.goods.edit',['goods'=>$goods,'cates' =>$cates]); 
        
        
     }
@@ -196,6 +206,7 @@ class GoodsController extends Controller
 
     public function  up($id)
     {
+       $data = DB::table('goods')->where('status','=',2)->get();
 
     }
 }

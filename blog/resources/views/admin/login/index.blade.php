@@ -49,12 +49,12 @@
                     </div>
                     <div class="mws-form-row">
                         <div class="mws-form-item">
-                            <input type="password" name="upwd" class="mws-login-password required" placeholder="请输入密码">
+                            <input type="text" name="upwd" class="mws-login-password required" placeholder="请输入密码">
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <div class="mws-form-item">
-                            <input type="password" name="code" style="width:60%" class="mws-login-password required" placeholder="请输入验证码">
+                            <input type="text" name="code" style="width:60%" class="mws-login-password required" placeholder="请输入验证码">
                             <img src="/admins/yzm" onclick="this.src='/admins/yzm?m'+Math.random()" alt="">
                         </div>
                     </div>

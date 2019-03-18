@@ -6,13 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Goods extends Model
 {
-   public $table = 'goods';
-     // public $primaryKey = 'tid';
-
-   //设置多对一关系
-   
-   public function cates()
+   //配置多对一
+   public function Cates()
    {
-   	     return $this->belongsTo('App\cates','pid');
+   	  return $this->belongsTo('App\Models\Cates','pid');
    }
 }

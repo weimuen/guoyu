@@ -1,5 +1,4 @@
- 
-<!--Begin Header Begin-->
+ <!--Begin Header Begin-->
 <div class="soubg">
 	<div class="sou">
     	<!--Begin 所在收货地区 Begin-->
@@ -79,33 +78,10 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="/homes/login">登录</a>&nbsp; <a href="/homes/reg" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        	<span class="fl">你好，请<a href="/homes/login">登录</a>&nbsp; <a href="/homes/reg" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/homes/person">个人中心</a>&nbsp;|</span>
         	<span class="ss">
-            	<div class="ss_list">
-                	<a href="#">个人中心</a>
-                    <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">个人中心</a></li>
-                                <li><a href="#">个人中心</a></li>
-                            </ul>
-                        </div>
-                    </div>     
-                </div>
-                <div class="ss_list">
-                	<a href="#">客户服务</a>
-                    <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </div>
+            	
+                
                 <div class="ss_list">
                 	<a href="#">网站导航</a>
                     <div class="ss_list_bg">

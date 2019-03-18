@@ -34,7 +34,7 @@ class LoginController extends Controller
     // 处理登录
     public function dologin(Request $request)
     {
-        // dd($request->all());
+        $data = $request->except(['_token']);
         // 获取数据
         $name = $request->input('uname');
         $pass = $request->input('upwd');
@@ -57,11 +57,11 @@ class LoginController extends Controller
                 ])->first();
               
            if($data){
-                $user = Users::where('uname','=',$name)->first();
-                if(Hash::check($pass,$user[0]->upwd)){
+                $users = Users::where('uname','=',$name)->first();
+                if(Hash::check($data['upwd'],$usersInfo->upwd)){
                     // 登录成功后的代码
-                   session('guoyuAdminUserInfo',true);
-                    session('adminUser',$data);
+                    session('guoyuAdminUsersInfo',true);
+                    session('adminsUsers',$data);
                     // 跳转
                     return redirect('admins')->with('success','登录成功');
                 }else{
@@ -75,7 +75,6 @@ class LoginController extends Controller
             return back()->with('error','验证码错误');
         }
        
-
 
     }
 }

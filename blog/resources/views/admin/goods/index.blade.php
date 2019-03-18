@@ -68,8 +68,10 @@
 				    </td>
 				    <td>               
                                    
-                                   @if($v->status == 2)上架
-                                   @endif($v->ststus == 3) 下架
+                                   @if($v->status == 1)新品
+                                   @elseif($v->status == 2) 上架
+                                   @else($v->status == 3) 下架
+                                   @endif
 
                     </td>			  
 				    <td>
@@ -80,12 +82,13 @@
 							<input type="submit" value="删除" class="btn btn-danger" >
 						</form>
 						
-				                  
+				                   @if($v->status ==2)
                                    <a href="/admins/goods/{{$v->id}}/up" class="btn btn-info">上架</a>
-                                   @if($v->status ==2)
-                               
+                                  
+                                   @elseif($v->status == 3)
 						           <a href="/admins/goods/{{$v->id}}/down" class="btn btn-danger">下架</a>
-						              @endif($v->status ==3)			
+						           @endif
+						             			
 
 				    </td>
 				</tr>

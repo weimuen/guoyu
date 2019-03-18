@@ -19,12 +19,20 @@
         					<input type="text" class="small" name="gname" value="{{$goods->gname}}">
         				</div>
         			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">所属分类</label>
-        				<div class="mws-form-item">
-        					<input type="text" class="small" name="tid" value="{{$goods->tid}}">
-        				</div>
-        			</div>
+        			 <div class="mws-form-row">
+                                    <label class="mws-form-label">所属分类</label>
+                                    <div class="mws-form-item" >
+                                        <select class="large" name="tid">
+                                       
+                                        @foreach($cates as $k=>$v)
+                                            <option value="{{$v->pid}}">{{$v->cname}}</option>
+                                         @endforeach      
+                                                 
+                                           
+                                        </select>
+                                        
+                                    </div>
+                                </div>
                    
         			<div class="mws-form-row">
         				<label class="mws-form-label">商品价格</label>
@@ -50,13 +58,15 @@
                     				<label class="mws-form-label">状态</label>
                     				<div class="mws-form-item clearfix" name="status">
                     					<ul class="mws-form-list inline">
-                                          
+                                          @if($goods->status == 1)
                     						<li><input type="radio" checked> <label>新品</label></li>
-                                           
+                                            @endif
+                                           @if($goods->status == 2)
                     						<li><input type="radio"> <label>上架</label></li>
-                                           
+                                            @endif
+                                           @if($goods->status == 3)
                     						<li><input type="radio"> <label>下架</label></li>
-                    					
+                    					   @endif
                     					</ul>
                     				</div>
                     </div>
