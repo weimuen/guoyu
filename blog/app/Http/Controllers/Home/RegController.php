@@ -55,13 +55,13 @@ class RegController extends Controller
    			$title = 'you can you up';
    		// 发送邮件
    	
-   		/*  Mail::send('home.email.index', ['token'=>$users->token,'id' => $users->id,'email' => $users->email], function ($m) use ($users) {
+   		 Mail::send('home.email.index', ['token'=>$users->token,'id' => $users->id,'email' => $users->email], function ($m) use ($users) {
           
 
             // $m->to($user->email, $user->name)->subject('Your Reminder!');
            $res = $m->to($users->email)->subject('【OTO官方】注册邮件');
            dump($res);
-        });*/
+        });
    			return redirect('/homes/login')->with('success','注册完成');
    		}else{
    			return back()->with('error','注册失败');

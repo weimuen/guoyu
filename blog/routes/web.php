@@ -26,7 +26,7 @@ Route::post('admins/dologin','Admin\LoginController@dologin');
 
 
 // 后台路由组
- //Route::group(['namespace'=>'Admin','prefix'=>'admins','middleware'=>'Login'],function()
+ // Route::group(['namespace'=>'Admin','prefix'=>'admins','middleware'=>'Login'],function()
 Route::group(['namespace'=>'Admin','prefix'=>'admins'],function()
 
 	{	

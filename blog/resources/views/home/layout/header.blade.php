@@ -78,7 +78,7 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-<<<<<<< HEAD
+
         	<span class="fl">你好，
 
                @if(session('homeUser'))
@@ -86,10 +86,8 @@
                @else
                <a href="/homes/login">请登录</a>&nbsp; 
                @endif
-                <a href="/homes/reg" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
-=======
-        	<span class="fl">你好，请<a href="/homes/login">登录</a>&nbsp; <a href="/homes/reg" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/homes/person">个人中心</a>&nbsp;|</span>
->>>>>>> origin/huang
+                <a href="/homes/reg" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/homes/person">个人中心</a>&nbsp;|</span>
+
         	<span class="ss">
             	
                 
