@@ -50,7 +50,6 @@
 				    <td>{{$v->id}}</td>
 				    <td>{{$v->uname}}</td>
 				    <td>{{$v->sex}}</td>
-
 				    <td>{{$v->email}}</td>
 				    <td>{{$v->tel}}</td>
 				    <td>{{$v->auth}}</td>
@@ -58,8 +57,8 @@
 				    	<abbr title="{{$v->usersinfo->description}}">
 				    	<p style="width:200px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">
 				    	{{$v->usersinfo->description}}
-				   	 </p>
-				    </abbr>
+				   	 	</p>
+				    	</abbr>
 				    </td>
 				    <td>{{$v->created_at}}</td>
 				    <td>{{$v->updated_at}}</td>

@@ -33,10 +33,8 @@
 	      <th>ID</th>
 	      <th>标题</th>
 	      <th>链接地址</th>
-	     
 	      <th>创建时间</th>
 	      <th>修改时间</th>
-	      <th>删除时间</th>
       	  <th>操作</th>
 		  
        </tr>
@@ -50,8 +48,6 @@
 				    <td>{{$v->lurl}}</td>			   
 				    <td>{{$v->created_at}}</td>
 				    <td>{{$v->updated_at}}</td>
-				    <td>{{$v->deteled_at}}</td>
-				  
 				    <td>
 						<a href="/admins/links/{{$v->id}}/edit" class="btn btn-info">修改</a>
 						<form action="/admins/links/{{$v->id}}" method="post" style="display: inline-block;">

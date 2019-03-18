@@ -40,6 +40,7 @@
                     </ul>
                 </div>
             @endif
+
                 <form class="mws-form" action="/admins/dologin" method="post">
                     {{ csrf_field() }}
                     <div class="mws-form-row">
@@ -57,14 +58,6 @@
                             <input type="password" name="code" style="width:60%" class="mws-login-password required" placeholder="请输入验证码">
                             <img src="/admins/yzm" onclick="this.src='/admins/yzm?m'+Math.random()" alt="">
                         </div>
-                    </div>
-                    <div id="mws-login-remember" class="mws-form-row mws-inset">
-                        <ul class="mws-form-list inline">
-                            <li>
-                                <input id="remember" type="checkbox"> 
-                                <label for="remember">记住密码</label>
-                            </li>
-                        </ul>
                     </div>
                     <div class="mws-form-row">
                         <input type="submit" value="登录" class="btn btn-success mws-login-button">

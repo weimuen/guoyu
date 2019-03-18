@@ -13,6 +13,6 @@ class Goods extends Model
    
    public function cates()
    {
-   	     return $this->belongsTo('App\cates','pid');
+   	     return $this->belongsTo('App\Models\Cates','path');
    }
 }

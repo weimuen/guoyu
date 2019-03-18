@@ -31,12 +31,6 @@
         					<input type="text" class="small" name="lurl">
         				</div>
         			</div>
-        			
-        			
-        			
-        			
-        			
-        			
         		</div>
         		<div class="mws-button-row">
         			<input type="submit" value="添加" class="btn btn-success">

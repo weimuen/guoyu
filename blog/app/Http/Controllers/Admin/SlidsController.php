@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Slids;
+use DB;
 class SlidsController extends Controller
 {
     /**
@@ -41,7 +42,19 @@ class SlidsController extends Controller
     {
         // 接收数据
         $data = $request->except('_taken');
-       
+       //表单验证规则
+        $this->validate($request, [
+            'sname' => 'required',
+            'surl' => 'required',
+            'order' => 'required',
+            'simg' => 'required',
+        ],[
+            'sname.required'=>"请输入名称",
+            'surl.required'=>"请输入链接地址",
+            'order.required'=>"请输入排序",
+            'simg.required'=>"请添加图片",
+
+        ]);
         // 创建文件上传对象
         $file = $request->file('simg');
         // 判断文件是否存在
@@ -105,7 +118,8 @@ class SlidsController extends Controller
     public function update(Request $request, $id)
     {
         //修改数据
-        $slid = Slids::find($id);
+          $slid = Slids::find($id);
+          
          // 创建文件上传对象
         $file = $request->file('simg');
         // 判断文件是否存在
@@ -114,13 +128,14 @@ class SlidsController extends Controller
             $ext = $file->extension();
             // 拼接名称
             $file_name = time()+rand(1000,9999).'.'.$ext;
+
             $res = $file->storeAs('public',$file_name);
         }else{
             return back();
         }
         $slid->sname = $request->input('sname');
         $slid->surl = $request->input('surl');
-        $slid->simg = $request->input('simg');
+        $slid->simg = $file_name;
         $slid->order = $request->input('order');
         //保存数据
         $slid->save();
@@ -141,7 +156,8 @@ class SlidsController extends Controller
     public function destroy($id)
     {
 
-        $res = Slids::destroy($id);
+        $res1 = Slids::destroy($id);
+        $slid = Slids::find($id);
         
         if($res){
             return redirect($_SERVER['HTTP_REFERER'])->with('success','删除成功');

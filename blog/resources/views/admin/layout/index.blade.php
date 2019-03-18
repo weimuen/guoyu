@@ -196,12 +196,17 @@
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        Hello, 管理员
+                        Hello, 
+                        @if(session('adminUser'))
+                        {{session('adminUser.uname')}}
+                        @else
+                        <a href="/admins/login">请登录</a>
+                        @endif
                     </div>
                     <ul>
                         <li><a href="#">头像</a></li>
                         <li><a href="#">更改密码</a></li>
-                        <li><a href="index.html">退出</a></li>
+                        <li><a href="/admins/logout">退出</a></li>
                     </ul>
                 </div>
             </div>
@@ -226,13 +231,13 @@
             </div>
             
             <!-- Searchbox -->
-            <div id="mws-searchbox" class="mws-inset">
+            <!-- <div id="mws-searchbox" class="mws-inset">
                 <form action="typography.html">
                     <input type="text" class="mws-search-input" placeholder="Search...">
                     <button type="submit" class="mws-search-submit"><i class="icon-search"></i></button>
                 </form>
-            </div>
-            
+            </div> -->
+           
             <!-- Main Navigation -->
             <div id="mws-navigation">
                 <ul>
@@ -271,65 +276,6 @@
                             <li><a href="/admins/links">友情链接列表</a></li>
                         </ul>
                     </li>
-                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    
-
                      <li class="active">
                         <a href="#"><i class="icon-list-2"></i>评论管理</a>
                         <ul>
@@ -343,19 +289,13 @@
                             <li><a href="/admins/slids">轮播图列表</a></li>
                         </ul>
                     </li>
-                     <li class="active">
+                     <!-- <li class="active">
                         <a href="#"><i class="icon-cog"></i>系统设置</a>
                         <ul>
-                            <li><a href="/admins/webset/index">站点管理</a></li>
+                            <li><a href="/admins/webset/create">添加站点</a></li>
+                            <li><a href="/admins/webset">站点管理</a></li>
                         </ul>
-                    </li>
-                     <li class="active">
-                        <a href="#"><i class="icon-list-2"></i>管理员管理</a>
-                        <ul>
-                            <li><a href="/admins/admins/create">添加管理员</a></li>
-                            <li><a href="/admins/admins">管理员列表</a></li>
-                        </ul>
-                    </li>
+                                         </li> -->
                 </ul>
             </div>
         </div>

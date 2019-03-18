@@ -51,31 +51,37 @@ class LoginController extends Controller
        
         if(strtoupper($ucode)==$ocode){
             // 通过用户名获取数据
-            $data = DB::table('users')->where([
-                ['uname','=','$name'],
-                ['auth','=','管理员']
-                ])->first();
-              
-           if($data){
-                $user = Users::where('uname','=',$name)->first();
-                if(Hash::check($pass,$user[0]->upwd)){
-                    // 登录成功后的代码
-                   session('guoyuAdminUserInfo',true);
-                    session('adminUser',$data);
-                    // 跳转
-                    return redirect('admins')->with('success','登录成功');
+            $data = Users::where('uname','=',$name)->first();
+           // dd($data);
+            if($data){
+                if(Hash::check($pass,$data['upwd'])){
+                    if($data['auth'] === '管理员'){
+                        session('guoyuadminuserinfo',true);
+                        // 存session
+                        session(['adminUser'=>$data]);
+                        return redirect('/admins')->with('success','登录成功');
+                      
+                    }else{
+                        return back()->with('error','不是管理员不能登录');
+                    }
                 }else{
                     return back()->with('error','密码错误');
                 }
-               
-           }else{
+            }else{
                 return back()->with('error','用户不存在');
-           }
+            }
         }else{
             return back()->with('error','验证码错误');
         }
        
 
 
+    }
+
+    // 退出登录
+    public function logout()
+    {
+        session()->flush();
+        return redirect('/admins')->with('success','退出成功');
     }
 }

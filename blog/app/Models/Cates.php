@@ -11,6 +11,6 @@ class Cates extends Model
     //一对多
     public  function goods()
     {
-             return $this->hasMany('App\goods','tid');
+             return $this->belongsTo('App\Models\goods','');
     }
 }
