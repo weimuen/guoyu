@@ -26,7 +26,7 @@ Route::post('admins/dologin','Admin\LoginController@dologin');
 
 
 // 后台路由组
-// Route::group(['namespace'=>'Admin','prefix'=>'admins','middleware'=>'adminLogin'],function()
+ //Route::group(['namespace'=>'Admin','prefix'=>'admins','middleware'=>'Login'],function()
 Route::group(['namespace'=>'Admin','prefix'=>'admins'],function()
 
 	{	
@@ -58,6 +58,8 @@ Route::group(['namespace'=>'Admin','prefix'=>'admins'],function()
 	
 });
 
+
+
 // 前台首页路由
 Route::get('homes','Home\IndexController@index');
 // 前台登录
@@ -75,7 +77,11 @@ Route::get('homes/cates/{id}','Home\CatesController@index');
 
 // 商品详情页
 Route::get('homes/goods/{id}','Home\GoodsController@index');
-// 
+// 个人中心
+Route::get('homes/person','Home\PersonController@person');
+//收货地址
+Route::get('homes/person/personAddress','Home\PersonController@address');
+Route::get('homes/person/personInfo','Home\PersonController@personInfo');
 
 
 

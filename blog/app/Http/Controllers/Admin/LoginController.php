@@ -34,7 +34,7 @@ class LoginController extends Controller
     // 处理登录
     public function dologin(Request $request)
     {
-        // dd($request->all());
+        $data = $request->except(['_token']);
         // 获取数据
         $name = $request->input('uname');
         $pass = $request->input('upwd');
@@ -49,33 +49,6 @@ class LoginController extends Controller
         // 获取session
         $ocode = $code->get();
        
-        if(strtoupper($ucode)==$ocode){
-            // 通过用户名获取数据
-            $data = Users::where('uname','=',$name)->first();
-           // dd($data);
-            if($data){
-                if(Hash::check($pass,$data['upwd'])){
-                    if($data['auth'] === '管理员'){
-                        session('guoyuadminuserinfo',true);
-                        // 存session
-                        session(['adminUser'=>$data]);
-                        return redirect('/admins')->with('success','登录成功');
-                      
-                    }else{
-                        return back()->with('error','不是管理员不能登录');
-                    }
-                }else{
-                    return back()->with('error','密码错误');
-                }
-            }else{
-                return back()->with('error','用户不存在');
-            }
-        }else{
-            return back()->with('error','验证码错误');
-        }
-       
-
-
     }
 
     // 退出登录

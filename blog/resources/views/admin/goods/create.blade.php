@@ -26,8 +26,9 @@
                                         <select class="large" name="tid">
                                        
                                         @foreach($cates as $k=>$v)
-                                            <option value="{{$v->gid}}">{{$v->cname}}</option>
-                                        @endforeach                                   
+                                            <option value="{{$v->pid}}">{{$v->cname}}</option>
+                                        @endforeach 
+                                                                    
                                            
                                         </select>
                                         
@@ -60,7 +61,7 @@
                     					<ul class="mws-form-list inline">
                     						<li><input type="radio" checked value="1"> <label>新品</label></li>
                     						<li><input type="radio" value="2"> <label>上架</label></li>
-                    						<li><input type="radio" value="2"> <label>下架</label></li>
+                    						<li><input type="radio" value="3"> <label>下架</label></li>
                     					
                     					</ul>
                     				</div>
