@@ -5,7 +5,12 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Cates;
+
 use App\Models\Slids;
+
+use DB;
+
+
 class IndexController extends Controller
 {
     /**
@@ -34,7 +39,13 @@ class IndexController extends Controller
     {
        
          $a = self::getpidCates();
+
          $slids = Slids::all();
+
+       
+        
+         
+
        
         // 加载视图
         return view('home.index.index',['cates_data'=>self::getpidCates(),'slids'=>$slids]);

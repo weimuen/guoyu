@@ -225,54 +225,27 @@
             </div>
         </div>  
         <!--End 商品分类详情 End-->                                                     
-    	<ul class="menu_r">                                                                                                                                               
+    	<ul class="menu_r">                                                                                @foreach($cates as $k=>$v)                                                               
         	<li><a href="Index.html">首页</a></li>
-            <li><a href="Food.html">美食</a></li>
-            <li><a href="Fresh.html">生鲜</a></li>
-            <li><a href="HomeDecoration.html">家居</a></li>
-            <li><a href="SuitDress.html">女装</a></li>
-            <li><a href="MakeUp.html">美妆</a></li>
-            <li><a href="Digital.html">数码</a></li>
-            <li><a href="GroupBuying.html">团购</a></li>
+            <li><a href="/goods/{{$goods->id}}">{{$goods->gname}}</a></li>
+           
         </ul>
-        <div class="m_ad">中秋送好礼！</div>
+      @endforeach
     </div>
 </div>
 <!--End Menu End--> 
 <div class="i_bg">
 	<div class="content">
     	<div class="cate_nav">
+        @foreach($cates as $kk=>$vv)
         	<dl>
-            	<dt><a href="#">奶粉尿裤</a></dt>
-                <dd><a href="#">奶粉系列</a></dd>
-                <dd><a href="#">纸尿裤</a></dd>
-                <dd><a href="#">婴儿湿巾</a></dd>
+            	<dt><a href="/goods/{{$goods->id}}">{{$goods->gname}}</a></dt>
+               
             </dl>
-            <dl>
-            	<dt><a href="#">洗护哺育</a></dt>
-                <dd><a href="#">洗发沐浴</a></dd>
-                <dd><a href="#">衣物清洁</a></dd>
-                <dd><a href="#">婴儿</a></dd>    
-                <dd><a href="#">护肤</a></dd>
-            </dl>
-            <dl>
-            	<dt><a href="#">辅食营养</a></dt>
-                <dd><a href="#">孕妈洗护</a></dd>
-                <dd><a href="#">待产系列</a></dd>
-                <dd><a href="#">母乳喂养</a></dd>
-            </dl>
-            <dl>
-            	<dt><a href="#">辅食营养品</a></dt>
-                <dd><a href="#">感官认知</a></dd>
-                <dd><a href="#">早教益智</a></dd>
-                <dd><a href="#">积木模型</a></dd>
-            </dl>
-            <dl>
-            	<dt><a href="#">童车/床/汽座</a></dt>
-                <dd><a href="#">婴儿手推车</a></dd>
-                <dd><a href="#">出行用品</a></dd>
-                <dd><a href="#">婴儿床/餐椅</a></dd>
-            </dl>
+        @endforeach    
+           
+            
+           
         </div>
 		<!--Begin Banner Begin-->
     	<div class="nban">    	
@@ -426,62 +399,35 @@
         </div>
         <div class="milk_right">
         	<ul>
+            @foreach($cates as $k=>$v)
             	<li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_1.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
+                    <div class="img"><a href="/cates/{{$cates->id}}"><img src="/home/images/{{$v->gpic}}" width="185" height="155" /></a></div>
+                	<div class="name"><a href="/cates/{{$cates->id}}">Topfer特福芬 德国原装进口</a></div>
                     <div class="price">
                     	<font>￥<span>260.00</span></font> &nbsp; 20R
                     </div>
                 </li>
+
                 <li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_2.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
+                    <div class="img"><a href="/cates/{{$cates->id}}"><img src="/home/goods/2.jpg" width="185" height="155" /></a></div>
+                	<div class="name"><a href="/cates/{{$cates->id}}">Topfer特福芬 德国原装进口</a></div>
                     <div class="price">
                     	<font>￥<span>260.00</span></font> &nbsp; 20R
                     </div>
                 </li>
+                
+                
+
+               
+               
                 <li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_3.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
+                    <div class="img"><a href="/cates/{{$cates->id}}"><img src="/home/goods/milk_8.jpg" width="185" height="155" /></a></div>
+                	<div class="name"><a href="/cates/{{$cates->id}}">Topfer特福芬 德国原装进口</a></div>
                     <div class="price">
                     	<font>￥<span>260.00</span></font> &nbsp; 20R
                     </div>
                 </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_4.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_5.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_6.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_7.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/milk_8.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>

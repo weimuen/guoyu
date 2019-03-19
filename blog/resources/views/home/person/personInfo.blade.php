@@ -17,7 +17,7 @@
             <div class="left_m">
               <div class="left_m_t t_bg2">订单管理</div>
                 <ul>
-                  <li><a href="Member_User.html">我的订单</a></li>
+                  <li><a href="/homes/person/personOrder">我的订单</a></li>
                     <li><a href="Member_Collect.html">我的收藏</a></li>
                    
                 </ul>

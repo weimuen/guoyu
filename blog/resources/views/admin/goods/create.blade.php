@@ -26,7 +26,7 @@
                                         <select class="large" name="tid">
                                        
                                         @foreach($cates as $k=>$v)
-                                            <option value="{{$v->pid}}">{{$v->cname}}</option>
+                                            <option value="{{$v->pid}}">{{ $v->cname }}</option>
                                         @endforeach 
                                                                     
                                            

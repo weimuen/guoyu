@@ -104,7 +104,7 @@
     <!--Begin 热门商品 Begin-->
     <div class="content mar_10">
         <div class="h_l_img">
-            <div class="img"><img  src="/home/images/l_img.jpg" width="188" height="188" /></div>
+            <div class="img"><img  src="/home/goods/1.jpg" width="188" height="188" /></div>
             <div class="pri_bg">
                 <span class="price fl">￥53.00</span>
                 <span class="fr">16R</span>
@@ -120,16 +120,15 @@
                                     <div class="box">
                                         <div class="h_icon"><img  src="/home/images/hot.png" width="50" height="50" /></div>
                                         <div class="imgbg">
-                                            <a href="#"><img  src="/home/images/hot1.jpg" width="160" height="136" /></a>
+                                            <a href="#"><img  src="/home/goods/3.jpg" width="160" height="136" /></a>
                                         </div>                                        
                                         <div class="name">
                                             <a href="#">
-                                            <h2>德国进口</h2>
-                                            德亚全脂纯牛奶200ml*48盒
+                                            <h2>曾国藩</h2>
                                             </a>
                                         </div>
                                         <div class="price">
-                                            <font>￥<span>189</span></font> &nbsp; 26R
+                                            <font>￥<span>189</span></font> &nbsp; 
                                         </div>
                                     </div>
                                 </li>
@@ -137,16 +136,16 @@
                                     <div class="box">
                                         <div class="h_icon"><img  src="/home/images/hot.png" width="50" height="50" /></div>
                                         <div class="imgbg">
-                                            <a href="#"><img  src="/home/images/hot2.jpg" width="160" height="136" /></a>
+                                            <a href="#"><img  src="/home/goods/2.jpg" width="160" height="136" /></a>
                                         </div>                                        
                                         <div class="name">
                                             <a href="#">
-                                            <h2>iphone 6S</h2>
-                                            Apple/苹果 iPhone 6s Plus公开版
+                                            <h2>雨纱</h2>
+                                           
                                             </a>
                                         </div>
                                         <div class="price">
-                                            <font>￥<span>5288</span></font> &nbsp; 25R
+                                            <font>￥<span>5288</span></font> &nbsp; 
                                         </div>
                                     </div>
                                 </li>
@@ -154,16 +153,15 @@
                                     <div class="box">
                                         <div class="h_icon"><img  src="/home/images/hot.png" width="50" height="50" /></div>
                                         <div class="imgbg">
-                                            <a href="#"><img  src="/home/images/hot3.jpg" width="160" height="136" /></a>
+                                            <a href="#"><img  src="/home/goods/4.jpg" width="160" height="136" /></a>
                                         </div>                                        
                                         <div class="name">
                                             <a href="#">
-                                            <h2>倩碧特惠组合套装</h2>
-                                            倩碧补水组合套装8折促销
+                                            <h2>鲁迅全集</h2>
                                             </a>
                                         </div>
                                         <div class="price">
-                                            <font>￥<span>368</span></font> &nbsp; 18R
+                                            <font>￥<span>368</span></font> &nbsp; 
                                         </div>
                                     </div>
                                 </li>
@@ -171,24 +169,23 @@
                                     <div class="box">
                                         <div class="h_icon"><img  src="/home/images/hot.png" width="50" height="50" /></div>
                                         <div class="imgbg">
-                                            <a href="#"><img  src="/home/images/hot4.jpg" width="160" height="136" /></a>
+                                            <a href="#"><img  src="/home/goods/5.jpg" width="160" height="136" /></a>
                                         </div>                                        
                                         <div class="name">
                                             <a href="#">
-                                            <h2>品利特级橄榄油</h2>
-                                            750ml*4瓶装组合 西班牙原装进口
+                                            <h2>湘行散记</h2>
                                             </a>
                                         </div>
                                         <div class="price">
-                                            <font>￥<span>280</span></font> &nbsp; 30R
+                                            <font>￥<span>280</span></font> &nbsp; 
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <a class="h_prev" href="javascript:void();">Previous</a>
-                    <a class="h_next" href="javascript:void();">Next</a>
+                    <a class="h_prev" href="home/cates/index">Previous</a>
+                    <a class="h_next" href="home/cates/index">Next</a>
                 </div>
             </div>
         </div>
@@ -212,15 +209,15 @@
         </div>
         <div class="sell_right">
             <div class="sell_1">
-                <div class="s_img"><a href="#"><img  src="/home/images/tm_1.jpg" width="185" height="155" /></a></div>
+                <div class="s_img"><a href="#"><img  src="/home/goods/6.jpg" width="185" height="155" /></a></div>
                 <div class="s_price">￥<span>89</span></div>
                 <div class="s_name">
-                    <h2><a href="#">沙宣洗发水</a></h2>
+                    <h2><a href="#">罗生门</a></h2>
                     倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
                 </div>
             </div>
             <div class="sell_2">
-                <div class="s_img"><a href="#"><img  src="/home/images/tm_2.jpg" width="185" height="155" /></a></div>
+                <div class="s_img"><a href="#"><img  src="/home/goods/7.jpg" width="185" height="155" /></a></div>
                 <div class="s_price">￥<span>289</span></div>
                 <div class="s_name">
                     <h2><a href="#">德芙巧克力</a></h2>
@@ -228,43 +225,41 @@
                 </div>
             </div>
             <div class="sell_b1">
-                <div class="sb_img"><a href="#"><img  src="/home/images/tm_b1.jpg" width="242" height="356" /></a></div>
+                <div class="sb_img"><a href="#"><img  src="/home/goods/8.jpg" width="242" height="356" /></a></div>
                 <div class="s_price">￥<span>289</span></div>
                 <div class="s_name">
-                    <h2><a href="#">东北大米</a></h2>
+                    <h2><a href="#">摆渡人</a></h2>
                     倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
                 </div>
             </div>
             <div class="sell_3">
-                <div class="s_img"><a href="#"><img  src="/home/images/tm_3.jpg" width="185" height="155" /></a></div>
+                <div class="s_img"><a href="#"><img  src="/home/goods/9.jpg" width="185" height="155" /></a></div>
                 <div class="s_price">￥<span>289</span></div>
                 <div class="s_name">
-                    <h2><a href="#">迪奥香水</a></h2>
+                    <h2><a href="#">传记</a></h2>
                     倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
                 </div>
             </div>
             <div class="sell_4">
-                <div class="s_img"><a href="#"><img  src="/home/images/tm_4.jpg" width="185" height="155" /></a></div>
+                <div class="s_img"><a href="#"><img  src="/home/goods/10.jpg" width="185" height="155" /></a></div>
                 <div class="s_price">￥<span>289</span></div>
                 <div class="s_name">
-                    <h2><a href="#">美妆</a></h2>
+                    <h2><a href="#"></a>浮生六记</h2>
                     倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
                 </div>
             </div>
             <div class="sell_b2">
-                <div class="sb_img"><a href="#"><img  src="/home/images/tm_b2.jpg" width="242" height="356" /></a></div>
+                <div class="sb_img"><a href="#"><img  src="/home/goods/11.jpg" width="242" height="356" /></a></div>
                 <div class="s_price">￥<span>289</span></div>
                 <div class="s_name">
-                    <h2><a href="#">美妆</a></h2>
+                    <h2><a href="#">自在独行</a></h2>
                     倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
                 </div>
             </div>
         </div>
     </div>
     <!--End 新书上架 End-->
-    <div class="content mar_20">
-        <img  src="/home/images/mban_1.jpg" width="1200" height="110" />
-    </div>
+   
 
 
 @include('home.layout.footer') 

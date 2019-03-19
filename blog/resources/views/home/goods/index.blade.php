@@ -298,13 +298,14 @@
 </div>
 <!--End Menu End--> 
 <div class="i_bg">
+@foreach($goods as $k=>$v)
 	<div class="postion">
     	<span class="fl">全部 > 美妆个护 > 香水 > 迪奥 > 迪奥真我香水</span>
     </div>    
     <div class="content">
     	                    
         <div id="tsShopContainer">
-            <div id="tsImgS"><a href="/home/images/p_big.jpg" title="Images" class="MagicZoom" id="MagicZoom"><img src="/home/images/p_big.jpg" width="390" height="390" /></a></div>
+            <div id="tsImgS"><a href="/home/goods/{{$v->gpic}}" title="{{$v->cname}}" class="MagicZoom" id="MagicZoom"><img src="/home/goods/p_big." width="390" height="390" /></a></div>
             <div id="tsPicContainer">
                 <div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
                 <div id="tsImgSCon">

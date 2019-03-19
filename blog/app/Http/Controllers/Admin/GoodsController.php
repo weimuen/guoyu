@@ -39,12 +39,16 @@ class GoodsController extends Controller
     public function create()
     {
        
-    
-       $cates = DB::table('cates')->select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+     
+      $cates = DB::table('cates')->select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+        foreach($cates as $k=>$v){
+            //统计path中','出现的次数
+            $n = substr_count($v->path,',');
+            // 重复使用一个字符串
+             $cates[$k]->cname = str_repeat('|----',$n).$v->cname;
        
        
-       
-            
+        }    
         
             //加载视图
             return view('admin.goods.create',['cates'=>$cates]);
@@ -117,6 +121,17 @@ class GoodsController extends Controller
        
        //获取类别数据
         $cates = DB::table('cates')->select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+
+        
+        foreach($cates as $k=>$v){
+            //统计path中','出现的次数
+            $n = substr_count($v->path,',');
+            // 重复使用一个字符串
+             $cates[$k]->cname = str_repeat('|----',$n).$v->cname;
+       
+       
+        }    
+        
         
        $goods = Goods::find($id);
 
