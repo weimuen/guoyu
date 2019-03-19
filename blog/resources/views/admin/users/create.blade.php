@@ -65,14 +65,14 @@
         					<input type="text" class="small" name="email" value="{{ old('email') }}">
         				</div>
         			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">个人介绍</label>
-        				<div class="mws-form-item">
-        					<textarea name="description" class="small">
-        						{{ old('descrition') }}
-        					</textarea>
-        				</div>
-        			</div>
+        		<!--     <div class="mws-form-row">
+                    <label class="mws-form-label">个人介绍</label>
+                    <div class="mws-form-item">
+                        <textarea name="description" class="small">
+                            {{ old('descrition') }}
+                        </textarea>
+                    </div>
+                </div> -->
         			
         		</div>
         		<div class="mws-button-row">

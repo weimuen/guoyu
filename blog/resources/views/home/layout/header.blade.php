@@ -117,7 +117,7 @@
         	<input type="text" value="" class="s_ipt" />
             <input type="submit" value="搜索" class="s_btn" />
         </form>                      
-        <span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
+        <span class="fl">热搜：<a href="http://search.dangdang.com/?key=%CE%E4%D6%BE%BA%EC&category_path=01.00.00.00.00.00">武志红</a><a href="#">iphone 6S</a><a href="http://product.dangdang.com/1901115247.html">人设</a><a href="http://product.dangdang.com/26909058.html">1分钟物理</a><a href="http://product.dangdang.com/25548039.html">南怀瑾</a></span>
     </div>
     <div class="i_car">
     	<div class="car_t">购物车 [ <span>3</span> ]</div>

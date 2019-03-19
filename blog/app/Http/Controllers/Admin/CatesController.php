@@ -11,10 +11,7 @@ class CatesController extends Controller
 
     public static function getCates()
     {
-
-         //$cates_data = Cates::all();
-        // $cates_data = DB::select(" select *,concat(path,',',id) as paths from cates order by paths");
-        //
+       
         $cates_data = Cates::select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
         foreach($cates_data as $k=>$v){
             //统计path中','出现的次数

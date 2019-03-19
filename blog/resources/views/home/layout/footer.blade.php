@@ -1,11 +1,6 @@
  <!--Begin Footer Begin -->
     <div class="b_btm_bg bg_color">
-         <div class="b_nav">
-        <dl>                                         
-            <dt><a href="#">新手上路</a></dt>
-        </dl>
-            
-        </div>
+      
         <div class="b_btm">
             <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr>
@@ -81,7 +76,7 @@
     </div>    
     <div class="btmbg">
 		<div class="btm">
-        	备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
+        	备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 国羽图书网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
             <img src="/home/images/b_1.gif" width="98" height="33" /><img src="/home/images/b_2.gif" width="98" height="33" /><img src="/home/images/b_3.gif" width="98" height="33" /><img src="/home/images/b_4.gif" width="98" height="33" /><img src="/home/images/b_5.gif" width="98" height="33" /><img src="/home/images/b_6.gif" width="98" height="33" />
         </div>    	
     </div>

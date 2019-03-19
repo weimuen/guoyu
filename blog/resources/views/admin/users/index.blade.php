@@ -5,8 +5,8 @@
     	<div class="mws-panel-header">
         	<span><i class="icon-table"></i>用户列表</span>
         </div>
-        <div class="mws-panel-body no-padding">
-        	<form action="/admins/users" method="get">
+       <div class="mws-panel-body no-padding">
+  <form action="/admins/users" method="get">
             <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
   <div id="DataTables_Table_1_length" class="dataTables_length">
     <label>显示

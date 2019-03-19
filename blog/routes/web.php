@@ -77,6 +77,8 @@ Route::get('homes/cates/{id}','Home\CatesController@index');
 
 // 商品详情页
 Route::get('homes/goods/{id}','Home\GoodsController@index');
+// 前台轮播图
+Route::get('homes/slids','Home\SlidsController@index');
 // 个人中心
 Route::get('homes/person','Home\PersonController@person');
 //收货地址

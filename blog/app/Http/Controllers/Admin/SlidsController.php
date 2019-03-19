@@ -156,8 +156,8 @@ class SlidsController extends Controller
     public function destroy($id)
     {
 
-        $res1 = Slids::destroy($id);
-        $slid = Slids::find($id);
+        $res = Slids::destroy($id);
+        
         
         if($res){
             return redirect($_SERVER['HTTP_REFERER'])->with('success','删除成功');

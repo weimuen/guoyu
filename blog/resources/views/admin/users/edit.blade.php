@@ -44,14 +44,7 @@
         					<input type="text" class="small" name="email" value="{{ $users->email }}">
         				</div>
         			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">个人介绍</label>
-        				<div class="mws-form-item">
-        					<textarea name="description" class="small">
-        						{{ $users->usersinfo->description }}
-        					</textarea>
-        				</div>
-        			</div>
+        		
         			
         		</div>
         		<div class="mws-button-row">

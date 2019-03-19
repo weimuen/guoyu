@@ -42,17 +42,8 @@
              @section('content')
             
              @show  
-</div>
-<!--End Menu End--> 
-<div class="i_bg bg_color">
-    <div class="i_ban_bg">
-        <!--Begin Banner Begin-->
-        <div class="banner">        
-            <div class="top_slide_wrap">
-                <ul class="slide_box bxslider">
-                    <li><img  src="/home/images/ban1.jpg" width="740" height="401" /></li>
-                    <li><img  src="/home/images/ban1.jpg" width="740" height="401" /></li> 
-                    <li><img  src="/home/images/ban1.jpg" width="740" height="401" /></li> 
+
+                   
                 </ul>   
                 <div class="op_btns clearfix">
                     <a href="#" class="op_btn op_prev"><span></span></a>
@@ -72,7 +63,7 @@
         <!--End Banner End-->
         <div class="inews">
             <div class="news_t">
-                <span class="fr"><a href="#">更多 ></a></span>新闻资讯
+                <span class="fr"><a href="#">更多 ></a></span>最新动态
             </div>
             <ul>
                 <li><span>[ 特惠 ]</span><a href="#">掬一轮明月 表无尽惦念</a></li>

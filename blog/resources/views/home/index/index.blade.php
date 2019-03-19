@@ -55,7 +55,18 @@
     </div>
  
 </div>
-
+</div>
+<!--End Menu End--> 
+<div class="i_bg bg_color">
+    <div class="i_ban_bg">
+        <!--Begin Banner Begin-->
+        <div class="banner">        
+            <div class="top_slide_wrap">
+                <ul class="slide_box bxslider">
+                    @foreach($slids as $k=>$v)
+                    <a href="{{$v->surl}}"><img src="/upload/public/{{$v->simg}}" width="740" height="401"></a>
+                    @endforeach
+                </ul>  
         
 
 @endsection

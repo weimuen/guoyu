@@ -5,6 +5,28 @@
     	<div class="mws-panel-header">
         	<span><i class="icon-table"></i>分类列表</span>
         </div>
+         <div class="mws-panel-body no-padding">
+  <form action="/admins/cates" method="get">
+            <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
+  <div id="DataTables_Table_1_length" class="dataTables_length">
+    <label>显示
+      <select size="1" name="count" aria-controls="DataTables_Table_1">
+        <option value="5" @if(isset($request['count']) && $request['count'] == 5) selected @endif>5</option>
+        <option value="10" @if(isset($request['count']) && $request['count'] == 10) selected @endif>10</option>
+        <option value="15" @if(isset($request['count']) && $request['count'] == 15) selected @endif>15</option>
+        <option value="50" @if(isset($request['count']) && $request['count'] == 50) selected @endif>50</option>
+        </select>条</label>
+
+  </div>
+  <div class="dataTables_filter" id="DataTables_Table_1_filter">
+    <label>关键字:
+      <input type="text" name="search" aria-controls="DataTables_Table_1" value="{{ $request['search'] or ''}} ">
+     
+      </label>
+       <input type="submit" value="搜索" class="btn btn-info">
+    
+  </div>
+  </form>
         <div class="mws-panel-body no-padding">
             <table class="mws-table">
                 <thead>
@@ -38,6 +60,10 @@
                     @endforeach
                 </tbody>
             </table>
+            <div id="page_page">
+         
+          
+            </div>
         </div>
     </div>
 	

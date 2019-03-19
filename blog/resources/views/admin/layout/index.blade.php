@@ -199,15 +199,16 @@
                         Hello, 
                         @if(session('adminUser'))
                         {{session('adminUser.uname')}}
+                        <a href="/admins/logout">退出</a>
                         @else
                         <a href="/admins/login">请登录</a>
                         @endif
                     </div>
-                    <ul>
+                    <!-- <ul>
                         <li><a href="#">头像</a></li>
                         <li><a href="#">更改密码</a></li>
                         <li><a href="/admins/logout">退出</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>
