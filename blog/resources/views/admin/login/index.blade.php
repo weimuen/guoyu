@@ -50,7 +50,7 @@
                     </div>
                     <div class="mws-form-row">
                         <div class="mws-form-item">
-                            <input type="text" name="upwd" class="mws-login-password required" placeholder="请输入密码">
+                            <input type="password" name="upwd" class="mws-login-password required" placeholder="请输入密码">
                         </div>
                     </div>
                     <div class="mws-form-row">

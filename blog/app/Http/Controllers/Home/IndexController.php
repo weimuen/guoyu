@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Cates;
+use DB;
 
 class IndexController extends Controller
 {
@@ -34,6 +35,7 @@ class IndexController extends Controller
     {
        
          $a = self::getpidCates();
+       
         
          
        

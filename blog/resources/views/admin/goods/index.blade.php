@@ -51,8 +51,10 @@
 				<tr class="odd">
 				    <td>{{$v->id}}</td>
 				    <td>{{$v->gname}}</td>
-				    <td>{{$v->path}}</td>
+				    <td>{{$v->tid}}</td>
 				    <td>{{$v->price}}</td>
+				    
+				    
 				    <td>
                         <img src="/upload/public/{{$v->gpic}}" alt="" width="100px"> 
 				    </td>
